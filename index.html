@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Química en Colores | Feria de Ciencias 2026</title>
+<style>
+:root{--navy:#061d3a;--ink:#0b1d35;--muted:#5f6f82;--paper:#f7f9fc;--pink:#ff4fb3;}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+a{color:inherit;text-decoration:none} .container{width:min(1180px,92%);margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(4,24,50,.97);border-bottom:1px solid rgba(255,255,255,.08)}
+nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{color:white;font-weight:900;letter-spacing:.04em} .links{display:flex;gap:27px;color:white;font-weight:750;font-size:.94rem}
+.links a{opacity:.82} .links a:hover{opacity:1;color:#ff67c2}
+.hero{background:linear-gradient(120deg,#061d3a,#0c3561 55%,#35155d);color:white}
+.hero-grid{display:grid;grid-template-columns:1fr 1.15fr;min-height:540px;align-items:center}
+.hero-copy{padding:65px 0} .eyebrow{color:#ff66c1;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:clamp(3.3rem,7vw,5.9rem);line-height:.94;letter-spacing:-.055em;margin:16px 0 22px}
+.hero p{font-size:1.2rem;color:#dce8f5;max-width:600px} .badges{display:flex;gap:24px;flex-wrap:wrap;margin-top:30px;font-weight:800}
+.hero-art{height:100%;display:flex;align-items:flex-end} .hero-art img{width:100%;height:100%;object-fit:cover}
+.intro{background:white;padding:70px 0} .intro-grid{display:grid;grid-template-columns:130px 1fr 180px;gap:34px;align-items:center}
+.atom{height:120px;width:120px;border-radius:50%;display:grid;place-items:center;font-size:4rem;background:linear-gradient(135deg,#efe8ff,#eaf7ff)}
+.intro h2,.stations h2,.station-section h2{font-size:2.05rem;margin:0 0 10px;letter-spacing:-.03em}
+.intro p{color:var(--muted);font-size:1.06rem;margin:0} .qr{text-align:center;border-left:1px solid #dce3ec;padding-left:28px}
+.qrbox{width:110px;height:110px;margin:auto;background:repeating-conic-gradient(#111 0 25%,white 0 50%) 50%/18px 18px;border:10px solid white;box-shadow:0 8px 22px #0002}
+.qr small{display:block;margin-top:10px;color:var(--muted)}
+.stations{padding:74px 0 90px} .section-title{text-align:center;margin-bottom:36px} .section-title p{color:var(--muted);margin:0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.card{background:white;border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(4,25,50,.13);display:flex;flex-direction:column;transition:.25s}
+.card:hover{transform:translateY(-7px)} .card-img{height:180px;background:linear-gradient(145deg,#eaf2ff,#f7ecff);display:grid;place-items:center}
+.card-img span{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;background:var(--accent);font-size:3.4rem;box-shadow:0 14px 28px #0002}
+.card-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1} .station-label{font-size:.84rem;font-weight:950;letter-spacing:.08em}
+.card h3{margin:0;font-size:1.22rem} .card p{color:var(--muted);margin:0} .card-btn{margin-top:auto;color:white;padding:12px 14px;border-radius:10px;text-align:center;font-weight:900}
+.station-section{padding:78px 0;border-top:1px solid #e2e8f0;scroll-margin-top:74px} .station-header{display:grid;grid-template-columns:1fr 160px;gap:30px;align-items:center;margin-bottom:28px}
+.station-header p{color:var(--muted);font-size:1.06rem} .station-icon{width:140px;height:140px;border-radius:50%;display:grid;place-items:center;font-size:4.5rem}
+.station-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px} .panel{background:white;border-radius:18px;padding:26px;box-shadow:0 12px 30px rgba(4,25,50,.11)}
+.panel h3{margin-top:0} .panel li{margin:.65rem 0} .equation{font-family:Cambria,Georgia,serif;font-size:1.3rem;background:#f1f5fb;border-left:5px solid;padding:17px;border-radius:10px}
+footer{background:#061d3a;color:#c9d5e4;padding:34px 0;text-align:center}
+@media(max-width:900px){.links{display:none}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:320px}.intro-grid{grid-template-columns:1fr;text-align:center}.atom{margin:auto}.qr{border:0;padding:0}.cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.cards,.station-grid,.station-header{grid-template-columns:1fr}.station-icon{margin:auto}h1{font-size:3.3rem}.hero-copy{padding:50px 0 20px}}
+</style>
+</head>
+<body>
+<header><nav class="container"><a class="brand" href="#inicio">⚗ QUÍMICA EN COLORES</a><div class="links">
+<a href="#inicio">Inicio</a><a href="#estacion-1">Estación 1</a><a href="#estacion-2">Estación 2</a><a href="#estacion-3">Estación 3</a><a href="#estacion-4">Estación 4</a>
+</div></nav></header>
+
+<section id="inicio" class="hero">
+<div class="container hero-grid">
+<div class="hero-copy">
+<div class="eyebrow">Feria de Ciencias 2026</div>
+<h1>QUÍMICA<br>EN COLORES</h1>
+<p>Exploramos la química que nos rodea a través de experimentos, análisis de datos y herramientas digitales.</p>
+<div class="badges"><span>⚗ Experimentá</span><span>📊 Analizá</span><span>▦ Descubrí</span></div>
+</div>
+<div class="hero-art"><img src="data:image/svg+xml;base64,CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTIwMCA3MjAiPgo8ZGVmcz4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMwNjFkM2EiLz4KICAgIDxzdG9wIG9mZnNldD0iLjU1IiBzdG9wLWNvbG9yPSIjMGIzMzVjIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMzNTE1NWQiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxsaW5lYXJHcmFkaWVudCBpZD0icGluayIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2ZmNmNjNyIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2M2MWY3OCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJibHVlIiB4MT0iMCIgeTE9IjAiIHgyPSIwIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjNTZlMGZmIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDg3OGQxIi8+PC9saW5lYXJHcmFkaWVudD4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImdvbGQiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmQ3NjkiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZjhhMDAiLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIxMjAwIiBoZWlnaHQ9IjcyMCIgZmlsbD0idXJsKCNiZykiLz4KPGcgb3BhY2l0eT0iLjE1IiBzdHJva2U9IiNiZmU4ZmYiIHN0cm9rZS13aWR0aD0iNCIgZmlsbD0ibm9uZSI+CiAgPHBhdGggZD0iTTgwIDEyMGw3MC00MCA3MCA0MHY4MGwtNzAgNDAtNzAtNDB6TTE1MCA4MFYyNU0yMjAgMTIwbDU1LTI4Ii8+CiAgPHBhdGggZD0iTTc4MCAxMTBsNzAtNDAgNzAgNDB2ODBsLTcwIDQwLTcwLTQwek04NTAgNzBWMjAiLz4KICA8cGF0aCBkPSJNOTgwIDI2MGw1NS0zMCA1NSAzMHY2MGwtNTUgMzAtNTUtMzB6Ii8+CjwvZz4KPGVsbGlwc2UgY3g9IjgwMCIgY3k9IjY0MCIgcng9IjM1MCIgcnk9IjI4IiBmaWxsPSIjMDIwZDFkIiBvcGFjaXR5PSIuNTUiLz4KPGc+CiAgPHBhdGggZD0iTTUwMCAxODBoODJ2MThsLTIwIDE4djExNmwxMjIgMjE0YzIwIDM2LTUgNzYtNDggNzZINDQ2Yy00MyAwLTY4LTQwLTQ4LTc2bDEyMi0yMTRWMjE2bC0yMC0xOHoiIGZpbGw9IiNkOWY0ZmYiIGZpbGwtb3BhY2l0eT0iLjE0IiBzdHJva2U9IiNkOGY2ZmYiIHN0cm9rZS13aWR0aD0iOCIvPgogIDxwYXRoIGQ9Ik00MjUgNTE1YzY0LTMwIDEwMCAyMCAxNjQtNyA0NC0xOCA2OS03IDk0IDEybC00NyA4Mkg0NDZ6IiBmaWxsPSJ1cmwoI3BpbmspIiBvcGFjaXR5PSIuOTUiLz4KICA8Y2lyY2xlIGN4PSI1MTIiIGN5PSI0NzUiIHI9IjEyIiBmaWxsPSIjZmZkOGYxIi8+PGNpcmNsZSBjeD0iNjA1IiBjeT0iNTM4IiByPSI5IiBmaWxsPSIjZmZkOGYxIi8+CjwvZz4KPGc+CiAgPHBhdGggZD0iTTcwMCAyMzBoMTUwbC0xNiAzNDVjLTEgMjUtMTYgNDAtNDAgNDBoLTYyYy0yNCAwLTM5LTE1LTQwLTQweiIgZmlsbD0iI2Q5ZjRmZiIgZmlsbC1vcGFjaXR5PSIuMTQiIHN0cm9rZT0iI2Q4ZjZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTY5OSA0MzhoMTQzbC04IDEzOGMtMSAyNC0xNiAzOS00MCAzOWgtNjJjLTI0IDAtMzktMTUtNDAtMzl6IiBmaWxsPSJ1cmwoI2JsdWUpIiBvcGFjaXR5PSIuOTUiLz4KICA8cGF0aCBkPSJNNzE1IDMxMmgzOE03MTIgMzYyaDU1TTcwOCA0MTJoMzhNNzA0IDQ2Mmg1NSIgc3Ryb2tlPSIjYzlmNWZmIiBzdHJva2Utd2lkdGg9IjYiLz4KPC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg5MDAgMjcwKSI+CiAgPHJlY3QgeD0iMCIgeT0iMTkwIiB3aWR0aD0iMjUwIiBoZWlnaHQ9IjM0IiByeD0iOSIgZmlsbD0iI2Q4ZjZmZiIgb3BhY2l0eT0iLjg2Ii8+CiAgPGcgZmlsbD0iI2Q5ZjRmZiIgZmlsbC1vcGFjaXR5PSIuMTQiIHN0cm9rZT0iI2Q4ZjZmZiIgc3Ryb2tlLXdpZHRoPSI2Ij4KICAgIDxyZWN0IHg9IjIwIiB5PSIwIiB3aWR0aD0iMzYiIGhlaWdodD0iMjA1IiByeD0iMTgiLz48cmVjdCB4PSI3OCIgeT0iMCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjIwNSIgcng9IjE4Ii8+CiAgICA8cmVjdCB4PSIxMzYiIHk9IjAiIHdpZHRoPSIzNiIgaGVpZ2h0PSIyMDUiIHJ4PSIxOCIvPjxyZWN0IHg9IjE5NCIgeT0iMCIgd2lkdGg9IjM2IiBoZWlnaHQ9IjIwNSIgcng9IjE4Ii8+CiAgPC9nPgogIDxwYXRoIGQ9Ik0yNCAxMThoMjh2NzZIMjR6IiBmaWxsPSJ1cmwoI2dvbGQpIi8+CiAgPHBhdGggZD0iTTgyIDEwM2gyOHY5MUg4MnoiIGZpbGw9InVybCgjcGluaykiLz4KICA8cGF0aCBkPSJNMTQwIDgwaDI4djExNGgtMjh6IiBmaWxsPSJ1cmwoI2JsdWUpIi8+CiAgPHBhdGggZD0iTTE5OCA5NWgyOHY5OWgtMjh6IiBmaWxsPSIjMzFjNDZhIi8+CjwvZz4KPC9zdmc+Cg==" alt="Materiales de laboratorio y soluciones de colores"></div>
+</div>
+</section>
+
+<section class="intro">
+<div class="container intro-grid">
+<div class="atom">⚛</div>
+<div><h2>La química está en todo</h2><p>Desde los colores de un indicador hasta el equilibrio de una reacción, la química está presente en nuestra vida cotidiana. Este recorrido propone investigar, comprender y comunicar resultados mediante experiencias reales.</p></div>
+<div class="qr"><div class="qrbox"></div><small>Espacio reservado para el QR general.</small></div>
+</div>
+</section>
+
+<section class="stations">
+<div class="container">
+<div class="section-title"><h2>Las cuatro estaciones</h2><p>Elegí una estación para comenzar el recorrido.</p></div>
+<div class="cards">
+    <article class="card">
+      <div class="card-img" style="--accent:#37c95b"><span>⚗️</span></div>
+      <div class="card-body">
+        <div class="station-label" style="color:#37c95b">ESTACIÓN 1</div>
+        <h3>¿Qué tan ácidas son las bebidas?</h3>
+        <p>Comparamos bebidas cotidianas mediante indicadores y mediciones de pH.</p>
+        <a href="#estacion-1" class="card-btn" style="background:#37c95b">Explorar estación 1 →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="--accent:#4c8dff"><span>📱</span></div>
+      <div class="card-body">
+        <div class="station-label" style="color:#4c8dff">ESTACIÓN 2</div>
+        <h3>El color también es un dato</h3>
+        <p>Convertimos colores observados en valores RGB utilizando celulares.</p>
+        <a href="#estacion-2" class="card-btn" style="background:#4c8dff">Explorar estación 2 →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="--accent:#ff991f"><span>🫧</span></div>
+      <div class="card-body">
+        <div class="station-label" style="color:#ff991f">ESTACIÓN 3</div>
+        <h3>CO₂ y equilibrio químico</h3>
+        <p>Observamos cómo el dióxido de carbono disuelto modifica el pH.</p>
+        <a href="#estacion-3" class="card-btn" style="background:#ff991f">Explorar estación 3 →</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-img" style="--accent:#a45bf6"><span>🧪</span></div>
+      <div class="card-body">
+        <div class="station-label" style="color:#a45bf6">ESTACIÓN 4</div>
+        <h3>Titulaciones: medir para conocer</h3>
+        <p>Determinamos acidez, calcio y dureza mediante valoraciones.</p>
+        <a href="#estacion-4" class="card-btn" style="background:#a45bf6">Explorar estación 4 →</a>
+      </div>
+    </article></div>
+</div>
+</section>
+
+<div class="container">
+    <section id="estacion-1" class="station-section">
+      <div class="station-header">
+        <div>
+          <div class="station-label" style="color:#37c95b">ESTACIÓN 1 · Indicadores y pH</div>
+          <h2>¿Qué tan ácidas son las bebidas?</h2>
+          <p>Comparamos bebidas cotidianas mediante indicadores y mediciones de pH.</p>
+        </div>
+        <div class="station-icon" style="background:#37c95b22;color:#37c95b">⚗️</div>
+      </div>
+      <div class="station-grid">
+        <div class="panel">
+          <h3>¿Qué hacemos?</h3>
+          <ol><li>Seleccionamos las muestras.</li><li>Agregamos el indicador.</li><li>Observamos el color.</li><li>Registramos e interpretamos el resultado.</li></ol>
+        </div>
+        <div class="panel">
+          <h3>Fundamento químico</h3>
+          <div class="equation" style="border-color:#37c95b">HIn ⇌ H⁺ + In⁻</div>
+          <p>Este contenido puede completarse luego con fotografías, resultados y gráficos obtenidos por los estudiantes.</p>
+        </div>
+      </div>
+    </section>
+    <section id="estacion-2" class="station-section">
+      <div class="station-header">
+        <div>
+          <div class="station-label" style="color:#4c8dff">ESTACIÓN 2 · Análisis RGB</div>
+          <h2>El color también es un dato</h2>
+          <p>Convertimos colores observados en valores RGB utilizando celulares.</p>
+        </div>
+        <div class="station-icon" style="background:#4c8dff22;color:#4c8dff">📱</div>
+      </div>
+      <div class="station-grid">
+        <div class="panel">
+          <h3>¿Qué hacemos?</h3>
+          <ol><li>Fotografiamos con iluminación constante.</li><li>Elegimos una zona de la imagen.</li><li>Registramos R, G y B.</li><li>Construimos tablas y gráficos.</li></ol>
+        </div>
+        <div class="panel">
+          <h3>Fundamento químico</h3>
+          <div class="equation" style="border-color:#4c8dff">Color digital = (R, G, B)</div>
+          <p>Este contenido puede completarse luego con fotografías, resultados y gráficos obtenidos por los estudiantes.</p>
+        </div>
+      </div>
+    </section>
+    <section id="estacion-3" class="station-section">
+      <div class="station-header">
+        <div>
+          <div class="station-label" style="color:#ff991f">ESTACIÓN 3 · Equilibrio químico</div>
+          <h2>CO₂ y equilibrio químico</h2>
+          <p>Observamos cómo el dióxido de carbono disuelto modifica el pH.</p>
+        </div>
+        <div class="station-icon" style="background:#ff991f22;color:#ff991f">🫧</div>
+      </div>
+      <div class="station-grid">
+        <div class="panel">
+          <h3>¿Qué hacemos?</h3>
+          <ol><li>Preparamos agua con indicador.</li><li>Registramos el color inicial.</li><li>Incorporamos CO₂.</li><li>Relacionamos el cambio con el equilibrio.</li></ol>
+        </div>
+        <div class="panel">
+          <h3>Fundamento químico</h3>
+          <div class="equation" style="border-color:#ff991f">CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻</div>
+          <p>Este contenido puede completarse luego con fotografías, resultados y gráficos obtenidos por los estudiantes.</p>
+        </div>
+      </div>
+    </section>
+    <section id="estacion-4" class="station-section">
+      <div class="station-header">
+        <div>
+          <div class="station-label" style="color:#a45bf6">ESTACIÓN 4 · Titulaciones</div>
+          <h2>Titulaciones: medir para conocer</h2>
+          <p>Determinamos acidez, calcio y dureza mediante valoraciones.</p>
+        </div>
+        <div class="station-icon" style="background:#a45bf622;color:#a45bf6">🧪</div>
+      </div>
+      <div class="station-grid">
+        <div class="panel">
+          <h3>¿Qué hacemos?</h3>
+          <ol><li>Tomamos una muestra conocida.</li><li>Agregamos el indicador.</li><li>Titulamos desde la bureta.</li><li>Calculamos a partir del volumen consumido.</li></ol>
+        </div>
+        <div class="panel">
+          <h3>Fundamento químico</h3>
+          <div class="equation" style="border-color:#a45bf6">Ca²⁺ + EDTA⁴⁻ → [Ca–EDTA]²⁻</div>
+          <p>Este contenido puede completarse luego con fotografías, resultados y gráficos obtenidos por los estudiantes.</p>
+        </div>
+      </div>
+    </section></div>
+<footer>Feria de Ciencias 2026 · Química de 4.º año · Sitio educativo</footer>
+</body>
+</html>
