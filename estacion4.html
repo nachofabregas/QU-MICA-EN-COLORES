@@ -1,91 +1,232 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Estación 4</title>
 <style>
-:root{--navy:#061d3a;--ink:#0b1d35;--muted:#607084;--paper:#f6f8fb;--green:#37c95b;--blue:#4c8dff;--orange:#ff991f;--purple:#a45bf6;--pink:#ff4fb3}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+:root{
+  --navy:#061d3a;--ink:#0b1d35;--muted:#607084;--paper:#f6f8fb;
+  --green:#37c95b;--blue:#4c8dff;--orange:#ff991f;--purple:#a45bf6;--pink:#ff4fb3;--teal:#14b8a6;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
 a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
 header{position:sticky;top:0;z-index:30;background:#061d3af4;color:#fff;backdrop-filter:blur(10px)}
-nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}.links{display:flex;gap:22px;font-weight:750}.links a{opacity:.82}.links a:hover{opacity:1;color:#ff7bc9}
-.hero{background:linear-gradient(120deg,#061d3a,#0b335c 55%,#35155d);color:#fff;padding:80px 0}.hero h1{font-size:clamp(3rem,7vw,5.4rem);line-height:.95;margin:10px 0 18px}.hero p{font-size:1.18rem;color:#dce8f5;max-width:780px}.eyebrow{color:#ff67c2;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
-.section{padding:68px 0}.section.alt{background:#fff}.section.dark{background:#061d3a;color:#fff}.section h2{font-size:2.15rem;margin:0 0 14px}.lead{color:var(--muted);font-size:1.07rem}.dark .lead{color:#cdd9e6}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}
+.links{display:flex;gap:22px;font-weight:750}.links a{opacity:.82}.links a:hover{opacity:1;color:#ff7bc9}
+.hero{background:linear-gradient(120deg,#061d3a,#0b335c 55%,#35155d);color:#fff;padding:80px 0}
+.hero h1{font-size:clamp(3rem,7vw,5.4rem);line-height:.95;margin:10px 0 18px}.hero p{font-size:1.18rem;color:#dce8f5;max-width:800px}
+.eyebrow{color:#ff67c2;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.section{padding:68px 0}.section.alt{background:#fff}.section.dark{background:#061d3a;color:#fff}
+.section h2{font-size:2.15rem;margin:0 0 14px}.lead{color:var(--muted);font-size:1.07rem}.dark .lead{color:#cdd9e6}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .panel{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}.panel h3{margin-top:0}.dark .panel{color:var(--ink)}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 14px 35px #04193220;display:flex;flex-direction:column;gap:10px}.card p{color:var(--muted)}.btn{display:inline-block;margin-top:auto;padding:12px 15px;border-radius:10px;color:#fff;font-weight:900;text-align:center}
-.steps{display:grid;gap:14px;counter-reset:s}.step{display:grid;grid-template-columns:40px 1fr;gap:12px}.step:before{counter-increment:s;content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eaf3ff;font-weight:900}
-.note{padding:16px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}.warning{padding:16px;border-radius:12px;background:#fff0f3;border:1px solid #f1a5b7}
-.indicator-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.range{height:30px;border-radius:999px;margin:12px 0}.range.methyl{background:linear-gradient(90deg,#d7191c 0 25%,#f28e2b 45%,#ffd43b 70%)}.range.pheno{background:linear-gradient(90deg,#f8fafc 0 35%,#f9a8d4 60%,#db2777 100%);border:1px solid #ddd}
-table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #e2e8f0;text-align:left}th{background:#f1f5f9}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.calculator{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-weight:800;font-size:.9rem;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid #ccd6e2;border-radius:10px;font-size:1rem}.calc-btn{width:100%;margin-top:16px;border:0;border-radius:10px;padding:13px;color:#fff;font-weight:900;cursor:pointer}.result{margin-top:16px;padding:16px;border-radius:12px;background:#edf8ff;border:1px solid #afd6f3;min-height:74px}.formula{font-family:Georgia,serif;background:#f1f5fb;border-left:5px solid var(--purple);padding:15px;border-radius:10px;overflow:auto}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 14px 35px #04193220;display:flex;flex-direction:column;gap:10px}.card p{color:var(--muted)}
+.btn{display:inline-block;margin-top:auto;padding:12px 15px;border-radius:10px;color:#fff;font-weight:900;text-align:center}
+.steps{display:grid;gap:14px;counter-reset:s}.step{display:grid;grid-template-columns:40px 1fr;gap:12px}
+.step:before{counter-increment:s;content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eaf3ff;font-weight:900}
+.note{padding:16px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}
+.calc-layout{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start}
+.lab-stage{background:linear-gradient(180deg,#0a223c,#08192b);border-radius:22px;padding:24px;box-shadow:0 16px 40px #04193230;position:sticky;top:94px;min-height:650px;color:#fff}
+.lab-title{text-align:center;margin:0 0 10px}.lab-sub{text-align:center;color:#bfd0df;font-size:.9rem;margin-bottom:20px}
+.burette-wrap{position:relative;height:430px;display:flex;justify-content:center}
+.burette{position:relative;width:78px;height:390px;border:5px solid #b8d7e6;border-radius:20px 20px 10px 10px;background:linear-gradient(90deg,#ffffff22,#ffffff55 45%,#ffffff12);overflow:hidden;box-shadow:inset 0 0 18px #ffffff22}
+.burette-liquid{position:absolute;left:0;right:0;top:0;background:linear-gradient(#d5f6ff,#36afe9);height:100%;transition:.45s}
+.burette-empty{position:absolute;left:0;right:0;top:0;background:linear-gradient(#ffffff08,#ffffff14);height:0%;transition:.45s;z-index:2}
+.burette-scale{position:absolute;inset:10px 7px;z-index:3;background:repeating-linear-gradient(to bottom,transparent 0 7px,#58778a 7px 8px);opacity:.72}
+.burette-number{position:absolute;right:-50px;top:14px;font-size:.75rem;color:#cfe7f4;line-height:28px;z-index:4}
+.stopcock{position:absolute;bottom:-14px;width:120px;height:20px;background:#8ea5b3;border-radius:10px}
+.stopcock:before{content:"";position:absolute;left:54px;top:15px;width:10px;height:66px;background:#b8d7e6;border-radius:6px}
+.stopcock:after{content:"";position:absolute;left:88px;top:-8px;width:12px;height:36px;background:#dceaf0;border-radius:6px;transform:rotate(90deg)}
+.drop{position:absolute;bottom:-92px;width:16px;height:22px;background:#39afe8;border-radius:55% 55% 60% 60%;transform:rotate(45deg);opacity:0}
+.drop.show{opacity:1;animation:drop 1s infinite}@keyframes drop{0%{transform:translateY(0) rotate(45deg)}100%{transform:translateY(28px) rotate(45deg)}}
+.flask{position:absolute;bottom:-185px;width:210px;height:155px;left:50%;transform:translateX(-50%)}
+.flask-neck{position:absolute;left:82px;top:0;width:46px;height:46px;border:5px solid #c6e3ef;border-bottom:0;background:#ffffff10}
+.flask-body{position:absolute;left:25px;top:38px;width:160px;height:110px;border:5px solid #c6e3ef;border-radius:12px 12px 52px 52px;background:linear-gradient(135deg,#ffffff14,#ffffff06);overflow:hidden}
+.flask-liquid{position:absolute;left:0;right:0;bottom:0;height:45%;transition:.5s;background:#f2f6f8}
+.flask-label{position:absolute;top:94px;left:0;right:0;text-align:center;font-weight:900;color:#fff;z-index:5}
+.readout{text-align:center;margin-top:208px}.readout strong{font-size:1.35rem}.progress{height:10px;background:#ffffff20;border-radius:999px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:.45s}
+.slider-wrap{margin-top:16px}.slider-wrap input{width:100%}
+.calculator{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field label{display:block;font-weight:800;font-size:.9rem;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid #ccd6e2;border-radius:10px;font-size:1rem}
+.calc-btn{width:100%;margin-top:16px;border:0;border-radius:10px;padding:13px;color:#fff;font-weight:900;cursor:pointer}
+.result{margin-top:16px;padding:16px;border-radius:12px;background:#edf8ff;border:1px solid #afd6f3;min-height:74px}
+.formula{font-family:Georgia,serif;background:#f1f5fb;border-left:5px solid var(--purple);padding:15px;border-radius:10px;overflow:auto}
+.development{display:none;margin-top:18px}.development.show{display:block}
+.dev-step{background:#fff;border-left:5px solid var(--purple);border-radius:12px;padding:16px;margin:12px 0;box-shadow:0 8px 18px #04193212}
+.dev-step strong{display:block;margin-bottom:5px}.toggle-dev{margin-top:14px;border:0;border-radius:10px;padding:11px 15px;background:#e9eefe;color:#283b64;font-weight:900;cursor:pointer}
+.endpoint{display:flex;gap:14px;align-items:center;margin-top:18px;padding:14px;border-radius:12px;background:#f7fafc}
+.swatch{width:62px;height:62px;border-radius:50%;box-shadow:0 8px 18px #04193220}.arrow{font-size:2rem}
 footer{background:#031327;color:#c8d4e2;text-align:center;padding:28px}
-@media(max-width:900px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.indicator-grid,.calc-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.cards,.form-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero h1{font-size:3.2rem}}
+@media(max-width:930px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.calc-layout{grid-template-columns:1fr}.lab-stage{position:static}.burette-wrap{height:390px}.readout{margin-top:170px}}
+@media(max-width:560px){.cards,.form-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero h1{font-size:3.2rem}.lab-stage{min-height:610px}}
 </style>
 </head><body><header><nav class="container"><a class="brand" href="index.html">⚗ QUÍMICA EN COLORES</a><div class="links"><a href="index.html">Inicio</a><a href="estacion1.html">Estación 1</a><a href="estacion2.html">Estación 2</a><a href="estacion3.html">Estación 3</a><a href="estacion4.html">Estación 4</a></div></nav></header>
-<section class="hero"><div class="container"><div class="eyebrow">Estación 4 · Titulaciones</div><h1>Medir para conocer</h1><p>Una bureta, una solución valorada y la estequiometría permiten transformar mililitros consumidos en acidez.</p></div></section>
+<section class="hero"><div class="container"><div class="eyebrow">Estación 4 · Titulaciones</div><h1>Medir para conocer</h1><p>Simuladores interactivos de bureta y Erlenmeyer para acompañar la explicación experimental.</p></div></section>
 
-<section class="section"><div class="container"><h2>Titulación de vinagre comercial</h2><div class="grid2">
-<div class="panel"><h3>Procedimiento propuesto</h3><div class="steps">
-<div class="step">Pipetear 5,00 mL de vinagre.</div>
-<div class="step">Agregar 30–50 mL de agua destilada.</div>
-<div class="step">Agregar 2–3 gotas de fenolftaleína.</div>
-<div class="step">Titular con NaOH previamente valorado hasta rosa pálido persistente.</div>
-</div></div>
-<div class="panel"><h3>Fundamento</h3><div class="formula">CH₃COOH + NaOH → CH₃COONa + H₂O</div><p>La acidez se informa habitualmente como porcentaje masa/volumen de ácido acético.</p></div>
-</div></div></section>
+<section class="section"><div class="container"><h2>1. Vinagre comercial</h2><div class="calc-layout">
 
-<section class="section alt"><div class="container"><h2>Calculadora de acidez del vinagre</h2><div class="calculator">
+    <div class="lab-stage">
+      <h3 class="lab-title">NaOH · Vinagre</h3>
+      <div class="lab-sub">Deslizá para simular el volumen gastado</div>
+      <div class="burette-wrap">
+        <div class="burette">
+          <div id="vLiquid" class="burette-liquid" style="background:linear-gradient(#dff8ff,#2aa7e7)"></div>
+          <div id="vEmpty" class="burette-empty"></div>
+          <div class="burette-scale"></div><div class='burette-number'>0<br>5<br>10<br>15<br>20<br>25<br>30<br>35<br>40<br>45<br>50</div>
+          <div class="stopcock"></div>
+          <div id="vDrop" class="drop" style="background:#2aa7e7"></div>
+          <div class="flask">
+            <div class="flask-neck"></div>
+            <div class="flask-body">
+              <div id="vFlask" class="flask-liquid" style="background:#f1f5f9"></div>
+              <div class="flask-label">Erlenmeyer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="readout"><strong id="vLevel">41.60 mL</strong><div class="progress"><span id="vProgress"></span></div></div>
+      <div class="slider-wrap"><input id="vSlider" type="range" min="0" max="50" step="0.10" value="41.6" oninput="syncSlider('v',this.value,'#f1f5f9','#f472b6')"></div>
+    </div>
+<div><div class="grid2"><div class="panel"><h3>Procedimiento</h3><div class="steps"><div class="step">Pipetear 5,00 mL de vinagre.</div><div class="step">Agregar agua destilada.</div><div class="step">Agregar fenolftaleína.</div><div class="step">Titular hasta rosa pálido persistente.</div></div></div>
+<div class="panel"><h3>Punto final</h3><div class="endpoint"><div class="swatch" style="background:#f1f5f9"></div><div class="arrow">→</div><div class="swatch" style="background:#f472b6"></div></div><p>Incoloro → rosa pálido persistente.</p></div></div>
+<div class="calculator" style="margin-top:22px"><h3>Calculadora interactiva</h3>
 <div class="form-grid">
 <div class="field"><label>NaOH gastado (mL)</label><input id="vV" type="number" step="0.01" value="41.60"></div>
-<div class="field"><label>Concentración de NaOH (mol/L)</label><input id="vM" type="number" step="0.0001" value="0.1000"></div>
-<div class="field"><label>Volumen de vinagre titulado (mL)</label><input id="vS" type="number" step="0.01" value="5.00"></div>
+<div class="field"><label>Concentración NaOH (mol/L)</label><input id="vM" type="number" step="0.0001" value="0.1000"></div>
+<div class="field"><label>Vinagre titulado (mL)</label><input id="vS" type="number" step="0.01" value="5.00"></div>
 <div class="field"><label>Factor de dilución</label><input id="vD" type="number" step="0.01" value="1.00"></div>
-</div><button class="calc-btn" style="background:var(--green)" onclick="calcVinagre()">Calcular acidez</button><div id="vRes" class="result">Ingresá el volumen gastado y calculá.</div>
-<div class="formula" style="margin-top:16px">% acidez = M(NaOH) × V(NaOH, mL) × 6,005 × factor / V(muestra, mL)</div>
-</div></div></section>
-
-<section class="section"><div class="container"><h2>Titulación de vino blanco</h2><div class="grid2">
-<div class="panel"><h3>Procedimiento propuesto</h3><div class="steps">
-<div class="step">Desgasificar el vino si contiene CO₂.</div>
-<div class="step">Pipetear 10,00 mL de vino blanco.</div>
-<div class="step">Agregar aproximadamente 10–30 mL de agua destilada.</div>
-<div class="step">Titular con NaOH 0,1000 M hasta el punto final adoptado.</div>
+</div><button class="calc-btn" style="background:var(--green)" onclick="calcVinagre()">Calcular</button><div id="vRes" class="result"></div>
+<button class="toggle-dev" onclick="toggle('vDev',this)">Mostrar desarrollo paso a paso</button>
+<div id="vDev" class="development"><div class="dev-step"><strong>Paso 1</strong><span id="v1"></span></div><div class="dev-step"><strong>Paso 2</strong><span id="v2"></span></div><div class="dev-step"><strong>Paso 3</strong><span id="v3"></span></div><div class="dev-step"><strong>Paso 4</strong><span id="v4"></span></div></div>
 </div></div>
-<div class="panel"><h3>Cómo se informa</h3><p>La acidez total del vino se expresa convencionalmente en <strong>g/L de ácido tartárico</strong>, no como porcentaje.</p><div class="note">Método de referencia: titulación hasta pH 7 o con azul de bromotimol y patrón de color. Con fenolftaleína, el resultado debe presentarse como una aproximación escolar.</div></div>
 </div></div></section>
 
-<section class="section alt"><div class="container"><h2>Calculadora de acidez total del vino</h2><div class="calculator">
+<section class="section alt"><div class="container"><h2>2. Vino blanco</h2><div class="calc-layout">
+
+    <div class="lab-stage">
+      <h3 class="lab-title">NaOH · Vino blanco</h3>
+      <div class="lab-sub">Deslizá para simular el volumen gastado</div>
+      <div class="burette-wrap">
+        <div class="burette">
+          <div id="wLiquid" class="burette-liquid" style="background:linear-gradient(#dff8ff,#8b5cf6)"></div>
+          <div id="wEmpty" class="burette-empty"></div>
+          <div class="burette-scale"></div><div class='burette-number'>0<br>5<br>10<br>15<br>20<br>25<br>30<br>35<br>40<br>45<br>50</div>
+          <div class="stopcock"></div>
+          <div id="wDrop" class="drop" style="background:#8b5cf6"></div>
+          <div class="flask">
+            <div class="flask-neck"></div>
+            <div class="flask-body">
+              <div id="wFlask" class="flask-liquid" style="background:#f7e8b8"></div>
+              <div class="flask-label">Erlenmeyer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="readout"><strong id="wLevel">8.00 mL</strong><div class="progress"><span id="wProgress"></span></div></div>
+      <div class="slider-wrap"><input id="wSlider" type="range" min="0" max="50" step="0.10" value="8.0" oninput="syncSlider('w',this.value,'#f7e8b8','#f3a7c8')"></div>
+    </div>
+<div><div class="grid2"><div class="panel"><h3>Procedimiento</h3><div class="steps"><div class="step">Desgasificar si corresponde.</div><div class="step">Pipetear 10,00 mL.</div><div class="step">Agregar agua destilada.</div><div class="step">Titular hasta el punto final adoptado.</div></div></div>
+<div class="panel"><h3>Punto final</h3><div class="endpoint"><div class="swatch" style="background:#f7e8b8"></div><div class="arrow">→</div><div class="swatch" style="background:#f3a7c8"></div></div><p>Viraje aproximado con fenolftaleína para la experiencia escolar.</p></div></div>
+<div class="calculator" style="margin-top:22px"><h3>Calculadora interactiva</h3>
 <div class="form-grid">
 <div class="field"><label>NaOH gastado (mL)</label><input id="wV" type="number" step="0.01" value="8.00"></div>
-<div class="field"><label>Concentración de NaOH (mol/L)</label><input id="wM" type="number" step="0.0001" value="0.1000"></div>
-<div class="field"><label>Volumen de vino titulado (mL)</label><input id="wS" type="number" step="0.01" value="10.00"></div>
+<div class="field"><label>Concentración NaOH (mol/L)</label><input id="wM" type="number" step="0.0001" value="0.1000"></div>
+<div class="field"><label>Vino titulado (mL)</label><input id="wS" type="number" step="0.01" value="10.00"></div>
 <div class="field"><label>Factor de dilución</label><input id="wD" type="number" step="0.01" value="1.00"></div>
-</div><button class="calc-btn" style="background:var(--purple)" onclick="calcVino()">Calcular acidez</button><div id="wRes" class="result">Ingresá el volumen gastado y calculá.</div>
-<div class="formula" style="margin-top:16px">Acidez (g/L como tartárico) = M(NaOH) × V(NaOH, mL) × 75,04 × factor / V(muestra, mL)</div>
+</div><button class="calc-btn" style="background:var(--purple)" onclick="calcVino()">Calcular</button><div id="wRes" class="result"></div>
+<button class="toggle-dev" onclick="toggle('wDev',this)">Mostrar desarrollo paso a paso</button>
+<div id="wDev" class="development"><div class="dev-step"><strong>Paso 1</strong><span id="w1"></span></div><div class="dev-step"><strong>Paso 2</strong><span id="w2"></span></div><div class="dev-step"><strong>Paso 3</strong><span id="w3"></span></div><div class="dev-step"><strong>Paso 4</strong><span id="w4"></span></div></div>
+</div></div>
 </div></div></section>
 
-<section class="section dark"><div class="container"><h2>Qué hará el alumno en el stand</h2><div class="grid3">
-<div class="panel"><strong>1. Titular</strong><p>Realizará la valoración y reconocerá el punto final.</p></div>
-<div class="panel"><strong>2. Registrar</strong><p>Anotará el volumen de NaOH consumido.</p></div>
-<div class="panel"><strong>3. Calcular</strong><p>Ingresará los datos en la página y explicará la estequiometría utilizada.</p></div>
+<section class="section"><div class="container"><h2>3. Dureza total del agua</h2><div class="calc-layout">
+
+    <div class="lab-stage">
+      <h3 class="lab-title">EDTA · Dureza</h3>
+      <div class="lab-sub">Deslizá para simular el volumen gastado</div>
+      <div class="burette-wrap">
+        <div class="burette">
+          <div id="hLiquid" class="burette-liquid" style="background:linear-gradient(#dff8ff,#14b8a6)"></div>
+          <div id="hEmpty" class="burette-empty"></div>
+          <div class="burette-scale"></div><div class='burette-number'>0<br>5<br>10<br>15<br>20<br>25<br>30<br>35<br>40<br>45<br>50</div>
+          <div class="stopcock"></div>
+          <div id="hDrop" class="drop" style="background:#14b8a6"></div>
+          <div class="flask">
+            <div class="flask-neck"></div>
+            <div class="flask-body">
+              <div id="hFlask" class="flask-liquid" style="background:#7f1d1d"></div>
+              <div class="flask-label">Erlenmeyer</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="readout"><strong id="hLevel">12.50 mL</strong><div class="progress"><span id="hProgress"></span></div></div>
+      <div class="slider-wrap"><input id="hSlider" type="range" min="0" max="50" step="0.10" value="12.5" oninput="syncSlider('h',this.value,'#7f1d1d','#2563eb')"></div>
+    </div>
+<div><div class="grid2"><div class="panel"><h3>Procedimiento</h3><div class="steps"><div class="step">Pipetear 50,0 mL de agua.</div><div class="step">Agregar tampón pH ≈ 10.</div><div class="step">Agregar NET.</div><div class="step">Titular con EDTA hasta azul.</div></div></div>
+<div class="panel"><h3>Punto final</h3><div class="endpoint"><div class="swatch" style="background:#7f1d1d"></div><div class="arrow">→</div><div class="swatch" style="background:#2563eb"></div></div><p>Rojo vino → azul.</p><div class="formula">Ca²⁺/Mg²⁺ + EDTA → complejos estables</div></div></div>
+<div class="calculator" style="margin-top:22px"><h3>Calculadora de dureza total</h3>
+<div class="form-grid">
+<div class="field"><label>EDTA gastado (mL)</label><input id="hV" type="number" step="0.01" value="12.50"></div>
+<div class="field"><label>Concentración EDTA (mol/L)</label><input id="hM" type="number" step="0.0001" value="0.0100"></div>
+<div class="field"><label>Volumen de agua (mL)</label><input id="hS" type="number" step="0.1" value="50.0"></div>
+<div class="field"><label>Factor de dilución</label><input id="hD" type="number" step="0.01" value="1.00"></div>
+</div><button class="calc-btn" style="background:var(--teal)" onclick="calcDureza()">Calcular dureza</button><div id="hRes" class="result"></div>
+<button class="toggle-dev" onclick="toggle('hDev',this)">Mostrar desarrollo paso a paso</button>
+<div id="hDev" class="development"><div class="dev-step"><strong>Paso 1</strong><span id="h1"></span></div><div class="dev-step"><strong>Paso 2</strong><span id="h2"></span></div><div class="dev-step"><strong>Paso 3</strong><span id="h3"></span></div><div class="dev-step"><strong>Paso 4</strong><span id="h4"></span></div></div>
+</div></div>
 </div></div></section>
 
+<section class="section dark"><div class="container"><h2>Cómo usar el simulador durante la feria</h2><div class="grid3">
+<div class="panel"><strong>1. Medir</strong><p>El alumno realiza la titulación real y lee la bureta.</p></div>
+<div class="panel"><strong>2. Ajustar</strong><p>Mueve el deslizador o escribe los mL consumidos.</p></div>
+<div class="panel"><strong>3. Explicar</strong><p>La bureta se vacía, el Erlenmeyer cambia de color y aparece el desarrollo.</p></div>
+</div></div></section>
 <footer>Feria de Ciencias 2026 · Estación 4</footer>
 <script>
 function n(id){return parseFloat(document.getElementById(id).value)}
+function toggle(id,btn){
+ const el=document.getElementById(id);el.classList.toggle('show');
+ btn.textContent=el.classList.contains('show')?'Ocultar desarrollo':'Mostrar desarrollo paso a paso';
+}
+function hexToRgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)]}
+function mix(a,b,t){const A=hexToRgb(a),B=hexToRgb(b);return `rgb(${A.map((x,i)=>Math.round(x+(B[i]-x)*t)).join(',')})`}
+function updateLab(prefix,volume,from,to){
+ const max=50, pct=Math.max(0,Math.min(100,volume/max*100));
+ document.getElementById(prefix+'Empty').style.height=pct+'%';
+ document.getElementById(prefix+'Liquid').style.height=(100-pct)+'%';
+ document.getElementById(prefix+'Progress').style.width=pct+'%';
+ document.getElementById(prefix+'Level').textContent=volume.toFixed(2)+' mL';
+ const t=Math.max(0,Math.min(1,(volume-0.82*max)/(0.18*max)));
+ document.getElementById(prefix+'Flask').style.background=mix(from,to,t);
+ const d=document.getElementById(prefix+'Drop');d.classList.add('show');setTimeout(()=>d.classList.remove('show'),900);
+}
+function syncSlider(prefix,val,from,to){
+ const v=parseFloat(val);document.getElementById(prefix+'V').value=v.toFixed(2);
+ updateLab(prefix,v,from,to);
+}
 function calcVinagre(){
- const V=n('vV'), M=n('vM'), S=n('vS'), D=n('vD');
- const box=document.getElementById('vRes');
- if([V,M,S,D].some(x=>!isFinite(x)||x<=0)){box.innerHTML='Revisá los datos ingresados.';return}
- const pct=M*V*6.005*D/S;
- const gl=pct*10;
- box.innerHTML='<strong>Acidez del vinagre:</strong><br>'+pct.toFixed(2)+' % m/V como ácido acético<br>'+gl.toFixed(1)+' g/L como ácido acético';
+ const V=n('vV'),M=n('vM'),S=n('vS'),D=n('vD'),box=document.getElementById('vRes');
+ if([V,M,S,D].some(x=>!isFinite(x)||x<=0)){box.innerHTML='Revisá los datos.';return}
+ document.getElementById('vSlider').value=V;updateLab('v',V,'#f1f5f9','#f472b6');
+ const mol=M*V/1000,grams=mol*60.052*D,pct=grams/S*100,gl=pct*10;
+ box.innerHTML='<strong>Acidez del vinagre:</strong><br>'+pct.toFixed(2)+' % m/V como ácido acético<br>'+gl.toFixed(1)+' g/L';
+ v1.textContent='n(NaOH) = '+mol.toExponential(3)+' mol';v2.textContent='n(CH₃COOH) = '+mol.toExponential(3)+' mol';v3.textContent='m = '+grams.toFixed(4)+' g';v4.textContent='% m/V = '+pct.toFixed(2)+' %';
 }
 function calcVino(){
- const V=n('wV'), M=n('wM'), S=n('wS'), D=n('wD');
- const box=document.getElementById('wRes');
- if([V,M,S,D].some(x=>!isFinite(x)||x<=0)){box.innerHTML='Revisá los datos ingresados.';return}
- const gl=M*V*75.04*D/S;
- const pct=gl/10;
- box.innerHTML='<strong>Acidez total del vino:</strong><br>'+gl.toFixed(2)+' g/L expresada como ácido tartárico<br>'+pct.toFixed(3)+' % m/V equivalente';
+ const V=n('wV'),M=n('wM'),S=n('wS'),D=n('wD'),box=document.getElementById('wRes');
+ if([V,M,S,D].some(x=>!isFinite(x)||x<=0)){box.innerHTML='Revisá los datos.';return}
+ document.getElementById('wSlider').value=V;updateLab('w',V,'#f7e8b8','#f3a7c8');
+ const eq=M*V/1000,grams=eq*75.04*D,gl=grams/(S/1000),pct=gl/10;
+ box.innerHTML='<strong>Acidez total del vino:</strong><br>'+gl.toFixed(2)+' g/L como ácido tartárico<br>'+pct.toFixed(3)+' % m/V equivalente';
+ w1.textContent='Equivalentes NaOH = '+eq.toExponential(3);w2.textContent='Masa equivalente = 75,04 g/eq';w3.textContent='m = '+grams.toFixed(4)+' g';w4.textContent='Acidez = '+gl.toFixed(2)+' g/L';
 }
+function calcDureza(){
+ const V=n('hV'),M=n('hM'),S=n('hS'),D=n('hD'),box=document.getElementById('hRes');
+ if([V,M,S,D].some(x=>!isFinite(x)||x<=0)){box.innerHTML='Revisá los datos.';return}
+ document.getElementById('hSlider').value=V;updateLab('h',V,'#7f1d1d','#2563eb');
+ const mol=M*V/1000,mg=mol*100.0869*1000*D,hard=mg/(S/1000);
+ box.innerHTML='<strong>Dureza total:</strong><br>'+hard.toFixed(1)+' mg/L como CaCO₃';
+ h1.textContent='n(EDTA) = '+mol.toExponential(3)+' mol';h2.textContent='n(Ca²⁺+Mg²⁺) = '+mol.toExponential(3)+' mol';h3.textContent='m equivalente CaCO₃ = '+mg.toFixed(3)+' mg';h4.textContent='Dureza = '+hard.toFixed(1)+' mg/L';
+}
+window.addEventListener('DOMContentLoaded',()=>{calcVinagre();calcVino();calcDureza()});
 </script>
 </body></html>

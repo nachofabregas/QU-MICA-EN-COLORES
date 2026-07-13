@@ -1,50 +1,64 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Estación 1</title>
 <style>
-:root{--navy:#061d3a;--ink:#0b1d35;--muted:#607084;--paper:#f6f8fb;--green:#37c95b;--blue:#4c8dff;--orange:#ff991f;--purple:#a45bf6;--pink:#ff4fb3}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+:root{
+  --navy:#061d3a;--ink:#0b1d35;--muted:#607084;--paper:#f6f8fb;
+  --green:#37c95b;--blue:#4c8dff;--orange:#ff991f;--purple:#a45bf6;--pink:#ff4fb3;--teal:#14b8a6;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
 a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
 header{position:sticky;top:0;z-index:30;background:#061d3af4;color:#fff;backdrop-filter:blur(10px)}
-nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}.links{display:flex;gap:22px;font-weight:750}.links a{opacity:.82}.links a:hover{opacity:1;color:#ff7bc9}
-.hero{background:linear-gradient(120deg,#061d3a,#0b335c 55%,#35155d);color:#fff;padding:80px 0}.hero h1{font-size:clamp(3rem,7vw,5.4rem);line-height:.95;margin:10px 0 18px}.hero p{font-size:1.18rem;color:#dce8f5;max-width:780px}.eyebrow{color:#ff67c2;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
-.section{padding:68px 0}.section.alt{background:#fff}.section.dark{background:#061d3a;color:#fff}.section h2{font-size:2.15rem;margin:0 0 14px}.lead{color:var(--muted);font-size:1.07rem}.dark .lead{color:#cdd9e6}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}
+.links{display:flex;gap:22px;font-weight:750}.links a{opacity:.82}.links a:hover{opacity:1;color:#ff7bc9}
+.hero{background:linear-gradient(120deg,#061d3a,#0b335c 55%,#35155d);color:#fff;padding:80px 0}
+.hero h1{font-size:clamp(3rem,7vw,5.4rem);line-height:.95;margin:10px 0 18px}.hero p{font-size:1.18rem;color:#dce8f5;max-width:800px}
+.eyebrow{color:#ff67c2;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.section{padding:68px 0}.section.alt{background:#fff}.section.dark{background:#061d3a;color:#fff}
+.section h2{font-size:2.15rem;margin:0 0 14px}.lead{color:var(--muted);font-size:1.07rem}.dark .lead{color:#cdd9e6}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .panel{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}.panel h3{margin-top:0}.dark .panel{color:var(--ink)}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 14px 35px #04193220;display:flex;flex-direction:column;gap:10px}.card p{color:var(--muted)}.btn{display:inline-block;margin-top:auto;padding:12px 15px;border-radius:10px;color:#fff;font-weight:900;text-align:center}
-.steps{display:grid;gap:14px;counter-reset:s}.step{display:grid;grid-template-columns:40px 1fr;gap:12px}.step:before{counter-increment:s;content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eaf3ff;font-weight:900}
-.note{padding:16px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}.warning{padding:16px;border-radius:12px;background:#fff0f3;border:1px solid #f1a5b7}
-.indicator-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.range{height:30px;border-radius:999px;margin:12px 0}.range.methyl{background:linear-gradient(90deg,#d7191c 0 25%,#f28e2b 45%,#ffd43b 70%)}.range.pheno{background:linear-gradient(90deg,#f8fafc 0 35%,#f9a8d4 60%,#db2777 100%);border:1px solid #ddd}
-table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #e2e8f0;text-align:left}th{background:#f1f5f9}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.calculator{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-weight:800;font-size:.9rem;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid #ccd6e2;border-radius:10px;font-size:1rem}.calc-btn{width:100%;margin-top:16px;border:0;border-radius:10px;padding:13px;color:#fff;font-weight:900;cursor:pointer}.result{margin-top:16px;padding:16px;border-radius:12px;background:#edf8ff;border:1px solid #afd6f3;min-height:74px}.formula{font-family:Georgia,serif;background:#f1f5fb;border-left:5px solid var(--purple);padding:15px;border-radius:10px;overflow:auto}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 14px 35px #04193220;display:flex;flex-direction:column;gap:10px}.card p{color:var(--muted)}
+.btn{display:inline-block;margin-top:auto;padding:12px 15px;border-radius:10px;color:#fff;font-weight:900;text-align:center}
+.steps{display:grid;gap:14px;counter-reset:s}.step{display:grid;grid-template-columns:40px 1fr;gap:12px}
+.step:before{counter-increment:s;content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eaf3ff;font-weight:900}
+.note{padding:16px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}
+.calc-layout{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start}
+.lab-stage{background:linear-gradient(180deg,#0a223c,#08192b);border-radius:22px;padding:24px;box-shadow:0 16px 40px #04193230;position:sticky;top:94px;min-height:650px;color:#fff}
+.lab-title{text-align:center;margin:0 0 10px}.lab-sub{text-align:center;color:#bfd0df;font-size:.9rem;margin-bottom:20px}
+.burette-wrap{position:relative;height:430px;display:flex;justify-content:center}
+.burette{position:relative;width:78px;height:390px;border:5px solid #b8d7e6;border-radius:20px 20px 10px 10px;background:linear-gradient(90deg,#ffffff22,#ffffff55 45%,#ffffff12);overflow:hidden;box-shadow:inset 0 0 18px #ffffff22}
+.burette-liquid{position:absolute;left:0;right:0;top:0;background:linear-gradient(#d5f6ff,#36afe9);height:100%;transition:.45s}
+.burette-empty{position:absolute;left:0;right:0;top:0;background:linear-gradient(#ffffff08,#ffffff14);height:0%;transition:.45s;z-index:2}
+.burette-scale{position:absolute;inset:10px 7px;z-index:3;background:repeating-linear-gradient(to bottom,transparent 0 7px,#58778a 7px 8px);opacity:.72}
+.burette-number{position:absolute;right:-50px;top:14px;font-size:.75rem;color:#cfe7f4;line-height:28px;z-index:4}
+.stopcock{position:absolute;bottom:-14px;width:120px;height:20px;background:#8ea5b3;border-radius:10px}
+.stopcock:before{content:"";position:absolute;left:54px;top:15px;width:10px;height:66px;background:#b8d7e6;border-radius:6px}
+.stopcock:after{content:"";position:absolute;left:88px;top:-8px;width:12px;height:36px;background:#dceaf0;border-radius:6px;transform:rotate(90deg)}
+.drop{position:absolute;bottom:-92px;width:16px;height:22px;background:#39afe8;border-radius:55% 55% 60% 60%;transform:rotate(45deg);opacity:0}
+.drop.show{opacity:1;animation:drop 1s infinite}@keyframes drop{0%{transform:translateY(0) rotate(45deg)}100%{transform:translateY(28px) rotate(45deg)}}
+.flask{position:absolute;bottom:-185px;width:210px;height:155px;left:50%;transform:translateX(-50%)}
+.flask-neck{position:absolute;left:82px;top:0;width:46px;height:46px;border:5px solid #c6e3ef;border-bottom:0;background:#ffffff10}
+.flask-body{position:absolute;left:25px;top:38px;width:160px;height:110px;border:5px solid #c6e3ef;border-radius:12px 12px 52px 52px;background:linear-gradient(135deg,#ffffff14,#ffffff06);overflow:hidden}
+.flask-liquid{position:absolute;left:0;right:0;bottom:0;height:45%;transition:.5s;background:#f2f6f8}
+.flask-label{position:absolute;top:94px;left:0;right:0;text-align:center;font-weight:900;color:#fff;z-index:5}
+.readout{text-align:center;margin-top:208px}.readout strong{font-size:1.35rem}.progress{height:10px;background:#ffffff20;border-radius:999px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:.45s}
+.slider-wrap{margin-top:16px}.slider-wrap input{width:100%}
+.calculator{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field label{display:block;font-weight:800;font-size:.9rem;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid #ccd6e2;border-radius:10px;font-size:1rem}
+.calc-btn{width:100%;margin-top:16px;border:0;border-radius:10px;padding:13px;color:#fff;font-weight:900;cursor:pointer}
+.result{margin-top:16px;padding:16px;border-radius:12px;background:#edf8ff;border:1px solid #afd6f3;min-height:74px}
+.formula{font-family:Georgia,serif;background:#f1f5fb;border-left:5px solid var(--purple);padding:15px;border-radius:10px;overflow:auto}
+.development{display:none;margin-top:18px}.development.show{display:block}
+.dev-step{background:#fff;border-left:5px solid var(--purple);border-radius:12px;padding:16px;margin:12px 0;box-shadow:0 8px 18px #04193212}
+.dev-step strong{display:block;margin-bottom:5px}.toggle-dev{margin-top:14px;border:0;border-radius:10px;padding:11px 15px;background:#e9eefe;color:#283b64;font-weight:900;cursor:pointer}
+.endpoint{display:flex;gap:14px;align-items:center;margin-top:18px;padding:14px;border-radius:12px;background:#f7fafc}
+.swatch{width:62px;height:62px;border-radius:50%;box-shadow:0 8px 18px #04193220}.arrow{font-size:2rem}
 footer{background:#031327;color:#c8d4e2;text-align:center;padding:28px}
-@media(max-width:900px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.indicator-grid,.calc-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.cards,.form-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero h1{font-size:3.2rem}}
+@media(max-width:930px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.calc-layout{grid-template-columns:1fr}.lab-stage{position:static}.burette-wrap{height:390px}.readout{margin-top:170px}}
+@media(max-width:560px){.cards,.form-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero h1{font-size:3.2rem}.lab-stage{min-height:610px}}
 </style>
 </head><body><header><nav class="container"><a class="brand" href="index.html">⚗ QUÍMICA EN COLORES</a><div class="links"><a href="index.html">Inicio</a><a href="estacion1.html">Estación 1</a><a href="estacion2.html">Estación 2</a><a href="estacion3.html">Estación 3</a><a href="estacion4.html">Estación 4</a></div></nav></header>
-<section class="hero"><div class="container"><div class="eyebrow">Estación 1 · pH e indicadores</div><h1>¿Qué tan ácidas son las bebidas?</h1><p>Las tiras reactivas multiparámetro permiten estimar el pH aun cuando la bebida posee color propio.</p></div></section>
-
-<section class="section"><div class="container"><h2>Experiencia principal: medir el pH</h2><div class="grid2">
-<div class="panel"><h3>Muestras</h3><p>Agua, leche, jugo, vino, gaseosa cola y vinagre blanco.</p><div class="note">En vino, cola y jugos oscuros no se interpreta el color general de la tira: se compara el patrón combinado de todos sus sectores reactivos.</div></div>
-<div class="panel"><h3>Pregunta al visitante</h3><p>¿Cuál de las bebidas tendrá el pH más bajo? El visitante hace una predicción antes de la medición.</p></div>
-</div></div></section>
-
-<section class="section alt"><div class="container"><h2>Procedimiento con tiras de pH</h2><div class="steps">
-<div class="step">Colocar 10–15 mL de cada bebida en vasos rotulados.</div>
-<div class="step">Tomar una tira sin tocar los sectores reactivos.</div>
-<div class="step">Aplicar una o dos gotas de muestra sobre cada sector con una pipeta limpia.</div>
-<div class="step">Esperar el tiempo indicado por el fabricante.</div>
-<div class="step">Comparar inmediatamente el patrón completo con la escala del envase.</div>
-<div class="step">Repetir la medición y registrar el intervalo de pH.</div>
-</div></div></section>
-
-<section class="section"><div class="container"><h2>Experiencia complementaria: cómo funcionan los indicadores</h2><p class="lead">Los indicadores individuales no cubren toda la escala de pH. Cada uno posee un intervalo de viraje limitado.</p><div class="indicator-grid">
-<div class="panel"><h3>Heliantina</h3><div class="range methyl"></div><p><strong>Intervalo:</strong> pH 3,1–4,4</p><p>Rojo en medio más ácido, naranja durante el viraje y amarillo por encima del intervalo.</p></div>
-<div class="panel"><h3>Fenolftaleína</h3><div class="range pheno"></div><p><strong>Intervalo:</strong> pH 8,2–10,0</p><p>Incolora en medios ácidos y neutros; rosa en medio básico.</p></div>
-</div><div class="warning" style="margin-top:22px"><strong>Importante:</strong> vino tinto, cola y leche no son adecuados para observar estos virajes directamente porque el color o la turbidez de la muestra los enmascara. Por eso se usan soluciones transparentes preparadas para la demostración.</div></div></section>
-
-<section class="section dark"><div class="container"><h2>Guion del alumno en el stand</h2><div class="grid3">
-<div class="panel"><strong>1. Predecir</strong><p>El visitante ordena las bebidas según la acidez que imagina.</p></div>
-<div class="panel"><strong>2. Medir</strong><p>El alumno aplica las muestras sobre las tiras y compara el patrón.</p></div>
-<div class="panel"><strong>3. Explicar</strong><p>Se muestran heliantina y fenolftaleína en soluciones transparentes y se explican sus rangos.</p></div>
-</div></div></section>
-
-<footer>Feria de Ciencias 2026 · Estación 1</footer></body></html>
+<section class="hero"><div class="container"><div class="eyebrow">Estación 1</div><h1>¿Qué tan ácidas son las bebidas?</h1><p>Medición con tiras multiparámetro y demostración de indicadores.</p></div></section>
+<section class="section"><div class="container"><div class="panel"><h2>Experiencia principal</h2><p>Agua, leche, jugo, vino, cola y vinagre se medirán con tiras reactivas de varios sectores.</p></div></div></section>
+<footer>Feria de Ciencias 2026</footer></body></html>
