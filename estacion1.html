@@ -1,50 +1,166 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Estación 1</title>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Estación 1 | Química en Colores</title>
 <style>
-:root{--navy:#061d3a;--ink:#0b1d35;--muted:#607084;--paper:#f6f8fb;--green:#37c95b;--blue:#4c8dff;--orange:#ff991f;--purple:#a45bf6;--pink:#ff4fb3}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+:root{
+  --navy:#061d3a;--ink:#0b1d35;--muted:#607084;--paper:#f6f8fb;
+  --green:#37c95b;--blue:#4c8dff;--orange:#ff991f;--purple:#a45bf6;--pink:#ff4fb3;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
 a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
-header{position:sticky;top:0;z-index:30;background:#061d3af4;color:#fff;backdrop-filter:blur(10px)}
-nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}.links{display:flex;gap:22px;font-weight:750}.links a{opacity:.82}.links a:hover{opacity:1;color:#ff7bc9}
-.hero{background:linear-gradient(120deg,#061d3a,#0b335c 55%,#35155d);color:#fff;padding:80px 0}.hero h1{font-size:clamp(3rem,7vw,5.4rem);line-height:.95;margin:10px 0 18px}.hero p{font-size:1.18rem;color:#dce8f5;max-width:780px}.eyebrow{color:#ff67c2;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
-.section{padding:68px 0}.section.alt{background:#fff}.section.dark{background:#061d3a;color:#fff}.section h2{font-size:2.15rem;margin:0 0 14px}.lead{color:var(--muted);font-size:1.07rem}.dark .lead{color:#cdd9e6}
+header{position:sticky;top:0;z-index:50;background:#061d3af4;color:#fff;backdrop-filter:blur(10px)}
+nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}
+.links{display:flex;gap:22px;font-weight:750}.links a{opacity:.82}.links a:hover{opacity:1;color:#ff7bc9}
+.progress-top{position:fixed;top:72px;left:0;right:0;height:5px;background:#ffffff20;z-index:49}
+.progress-top span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue),var(--pink))}
+.hero{position:relative;min-height:620px;display:flex;align-items:end;overflow:hidden;color:#fff;background:
+radial-gradient(circle at 75% 25%,#4c8dff33,transparent 25%),
+radial-gradient(circle at 20% 20%,#37c95b22,transparent 22%),
+linear-gradient(120deg,#061d3a,#0b335c 58%,#35155d)}
+.hero:before{content:"";position:absolute;inset:auto 8% 7% auto;width:52%;height:70%;background:
+linear-gradient(#ffffff22,#ffffff08);border:5px solid #dff6ff55;border-radius:38px;transform:skewX(-5deg)}
+.tubes{position:absolute;right:10%;bottom:11%;display:flex;gap:20px;align-items:end;z-index:1}
+.tube{width:58px;border:5px solid #dff6ff;border-radius:28px 28px 14px 14px;background:#ffffff18;position:relative;overflow:hidden}
+.tube i{position:absolute;left:0;right:0;bottom:0}.tube:nth-child(1){height:270px}.tube:nth-child(2){height:330px}.tube:nth-child(3){height:245px}.tube:nth-child(4){height:305px}.tube:nth-child(5){height:230px}.tube:nth-child(6){height:285px}
+.hero .container{position:relative;z-index:2;padding:100px 0 76px}
+.hero h1{font-size:clamp(3rem,7vw,5.6rem);line-height:.95;margin:10px 0 18px;letter-spacing:-.05em;max-width:820px}
+.hero p{font-size:1.18rem;color:#dce8f5;max-width:700px}.eyebrow{color:#ff67c2;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.cta{display:inline-block;margin-top:24px;padding:14px 20px;border-radius:12px;background:var(--green);color:#fff;font-weight:900}
+.section{padding:68px 0}.section.alt{background:#fff}.section.dark{background:#061d3a;color:#fff}
+.section h2{font-size:2.15rem;margin:0 0 14px}.lead{color:var(--muted);font-size:1.07rem}.dark .lead{color:#cdd9e6}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .panel{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}.panel h3{margin-top:0}.dark .panel{color:var(--ink)}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 14px 35px #04193220;display:flex;flex-direction:column;gap:10px}.card p{color:var(--muted)}.btn{display:inline-block;margin-top:auto;padding:12px 15px;border-radius:10px;color:#fff;font-weight:900;text-align:center}
+.predict{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.predict button{border:0;background:#fff;border-radius:16px;padding:20px;box-shadow:0 12px 30px #04193220;font-weight:850;cursor:pointer;transition:.2s}.predict button:hover,.predict button.selected{outline:3px solid var(--green);transform:translateY(-4px)}.predict span{display:block;font-size:2rem;margin-bottom:8px}
+.prediction-result{display:none;margin-top:16px;padding:15px;border-radius:12px;background:#e9fff1;border:1px solid #98dfaf}.prediction-result.show{display:block}
+.ph-scale{display:grid;grid-template-columns:repeat(15,1fr);height:62px;border-radius:14px;overflow:hidden;margin:22px 0 12px;box-shadow:0 10px 24px #04193218}.ph-scale span{display:grid;place-items:center;color:#fff;font-weight:900;font-size:.8rem}
+.log-demo{display:none;margin-top:18px}.log-demo.show{display:block}
+.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.method{background:#fff;border-radius:18px;padding:22px;box-shadow:0 12px 30px #04193218}.method .icon{font-size:2.4rem}.method ul{padding-left:18px;color:var(--muted)}
+.strip{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:22px;background:#fff;border-radius:18px;box-shadow:0 12px 30px #04193218}.strip i{width:52px;height:52px;border-radius:8px;display:block;position:relative}.strip i:hover:after{content:attr(data-label);position:absolute;bottom:62px;left:50%;transform:translateX(-50%);background:#061d3a;color:#fff;padding:6px 9px;border-radius:8px;white-space:nowrap;font-style:normal;font-size:.8rem}
 .steps{display:grid;gap:14px;counter-reset:s}.step{display:grid;grid-template-columns:40px 1fr;gap:12px}.step:before{counter-increment:s;content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eaf3ff;font-weight:900}
-.note{padding:16px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}.warning{padding:16px;border-radius:12px;background:#fff0f3;border:1px solid #f1a5b7}
+table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #e2e8f0;text-align:left}th{background:#f1f5f9}.editable input{width:100%;padding:8px;border:1px solid #ccd6e2;border-radius:8px}
+.chart{display:grid;gap:12px;margin-top:20px}.bar-row{display:grid;grid-template-columns:120px 1fr 52px;gap:12px;align-items:center}.bar-track{height:22px;background:#e8eef4;border-radius:999px;overflow:hidden}.bar-fill{height:100%;width:0;transition:.5s;border-radius:999px}
 .indicator-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.range{height:30px;border-radius:999px;margin:12px 0}.range.methyl{background:linear-gradient(90deg,#d7191c 0 25%,#f28e2b 45%,#ffd43b 70%)}.range.pheno{background:linear-gradient(90deg,#f8fafc 0 35%,#f9a8d4 60%,#db2777 100%);border:1px solid #ddd}
-table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #e2e8f0;text-align:left}th{background:#f1f5f9}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.calculator{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-weight:800;font-size:.9rem;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid #ccd6e2;border-radius:10px;font-size:1rem}.calc-btn{width:100%;margin-top:16px;border:0;border-radius:10px;padding:13px;color:#fff;font-weight:900;cursor:pointer}.result{margin-top:16px;padding:16px;border-radius:12px;background:#edf8ff;border:1px solid #afd6f3;min-height:74px}.formula{font-family:Georgia,serif;background:#f1f5fb;border-left:5px solid var(--purple);padding:15px;border-radius:10px;overflow:auto}
+.note{padding:16px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}.warning{padding:16px;border-radius:12px;background:#fff0f3;border:1px solid #f1a5b7}
+.guide{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.guide .panel strong{display:block;margin-bottom:8px}
+.toggle{margin-top:14px;border:0;border-radius:10px;padding:11px 15px;background:#e9eefe;color:#283b64;font-weight:900;cursor:pointer}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s}.reveal.visible{opacity:1;transform:none}
 footer{background:#031327;color:#c8d4e2;text-align:center;padding:28px}
-@media(max-width:900px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.indicator-grid,.calc-grid{grid-template-columns:1fr}}
-@media(max-width:560px){.cards,.form-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero h1{font-size:3.2rem}}
+@media(max-width:930px){.links{display:none}.grid2,.grid3,.indicator-grid,.method-grid,.guide{grid-template-columns:1fr}.predict{grid-template-columns:repeat(2,1fr)}.tubes{opacity:.38;right:0}}
+@media(max-width:560px){.predict{grid-template-columns:1fr}.hero h1{font-size:3.2rem}.bar-row{grid-template-columns:90px 1fr 45px}}
 </style>
-</head><body><header><nav class="container"><a class="brand" href="index.html">⚗ QUÍMICA EN COLORES</a><div class="links"><a href="index.html">Inicio</a><a href="estacion1.html">Estación 1</a><a href="estacion2.html">Estación 2</a><a href="estacion3.html">Estación 3</a><a href="estacion4.html">Estación 4</a></div></nav></header>
-<section class="hero"><div class="container"><div class="eyebrow">Estación 1 · pH e indicadores</div><h1>¿Qué tan ácidas son las bebidas?</h1><p>Las tiras reactivas multiparámetro permiten estimar el pH aun cuando la bebida posee color propio.</p></div></section>
+</head>
+<body>
+<header><nav class="container"><a class="brand" href="index.html">⚗ QUÍMICA EN COLORES</a><div class="links"><a href="index.html">Inicio</a><a href="estacion1.html">Estación 1</a><a href="estacion2.html">Estación 2</a><a href="estacion3.html">Estación 3</a><a href="estacion4.html">Estación 4</a></div></nav></header>
+<div class="progress-top"><span></span></div>
 
-<section class="section"><div class="container"><h2>Experiencia principal: medir el pH</h2><div class="grid2">
-<div class="panel"><h3>Muestras</h3><p>Agua, leche, jugo, vino, gaseosa cola y vinagre blanco.</p><div class="note">En vino, cola y jugos oscuros no se interpreta el color general de la tira: se compara el patrón combinado de todos sus sectores reactivos.</div></div>
-<div class="panel"><h3>Pregunta al visitante</h3><p>¿Cuál de las bebidas tendrá el pH más bajo? El visitante hace una predicción antes de la medición.</p></div>
+<section class="hero">
+<div class="tubes">
+<div class="tube"><i style="height:45%;background:#ffd43b"></i></div><div class="tube"><i style="height:53%;background:#ff9f1c"></i></div><div class="tube"><i style="height:42%;background:#ff4d8d"></i></div><div class="tube"><i style="height:50%;background:#7c3aed"></i></div><div class="tube"><i style="height:39%;background:#2563eb"></i></div><div class="tube"><i style="height:48%;background:#22c55e"></i></div>
+</div>
+<div class="container"><div class="eyebrow">Estación 1 · pH e indicadores</div><h1>¿Qué tan ácidas son las bebidas?</h1><p>Una experiencia para predecir, medir, explicar y comparar.</p><a class="cta" href="#prediccion">Comenzar ↓</a></div>
+</section>
+
+<section id="prediccion" class="section reveal"><div class="container"><h2>1. Hacé tu predicción</h2><p class="lead">¿Cuál de estas bebidas tendrá el pH más bajo?</p>
+<div class="predict">
+<button data-choice="Agua"><span>💧</span>Agua</button><button data-choice="Leche"><span>🥛</span>Leche</button><button data-choice="Jugo"><span>🍊</span>Jugo</button><button data-choice="Vino"><span>🍷</span>Vino</button><button data-choice="Cola"><span>🥤</span>Cola</button><button data-choice="Vinagre"><span>🫗</span>Vinagre</button>
+</div><div class="prediction-result"></div></div></section>
+
+<section class="section alt reveal"><div class="container"><h2>2. ¿Qué es el pH?</h2><p class="lead">El pH expresa la acidez o basicidad de una solución y está relacionado con la concentración de H⁺.</p>
+<div class="ph-scale">
+<span style="background:#7f1d1d">0</span><span style="background:#b91c1c">1</span><span style="background:#dc2626">2</span><span style="background:#f97316">3</span><span style="background:#fb923c">4</span><span style="background:#facc15;color:#111">5</span><span style="background:#a3e635;color:#111">6</span><span style="background:#22c55e">7</span><span style="background:#14b8a6">8</span><span style="background:#06b6d4">9</span><span style="background:#0ea5e9">10</span><span style="background:#2563eb">11</span><span style="background:#4f46e5">12</span><span style="background:#7c3aed">13</span><span style="background:#581c87">14</span>
+</div>
+<div class="grid3"><div class="panel"><strong>pH bajo</strong><p>Mayor acidez.</p></div><div class="panel"><strong>pH 7</strong><p>Condición neutra.</p></div><div class="panel"><strong>pH alto</strong><p>Mayor basicidad.</p></div></div>
+<button class="toggle" onclick="toggleLog()">¿Por qué la escala es logarítmica?</button>
+<div id="logDemo" class="log-demo panel"><div style="font-family:Georgia,serif;font-size:1.35rem">pH = −log[H⁺]</div><p>Una diferencia de una unidad de pH representa un cambio de diez veces en [H⁺]. Por eso pH 2 es 100 veces más ácido que pH 4.</p></div>
+</div></section>
+
+<section class="section reveal"><div class="container"><h2>3. ¿Cómo podemos medirlo?</h2><div class="method-grid">
+<div class="method"><div class="icon">🟠</div><h3>Heliantina</h3><ul><li>Rango estrecho.</li><li>Útil en medio ácido.</li><li>No cubre toda la escala.</li></ul></div>
+<div class="method"><div class="icon">🌸</div><h3>Fenolftaleína</h3><ul><li>Excelente para bases.</li><li>Incolora en medio ácido.</li><li>No sirve para bebidas ácidas.</li></ul></div>
+<div class="method"><div class="icon">🧾</div><h3>Tiras multiparámetro</h3><ul><li>Varios indicadores.</li><li>Amplio rango.</li><li>Sirven con muestras coloreadas.</li></ul></div>
+<div class="method"><div class="icon">📟</div><h3>pH-metro</h3><ul><li>Mayor precisión.</li><li>Lectura instrumental.</li><li>No disponible en el stand.</li></ul></div>
 </div></div></section>
 
-<section class="section alt"><div class="container"><h2>Procedimiento con tiras de pH</h2><div class="steps">
-<div class="step">Colocar 10–15 mL de cada bebida en vasos rotulados.</div>
-<div class="step">Tomar una tira sin tocar los sectores reactivos.</div>
-<div class="step">Aplicar una o dos gotas de muestra sobre cada sector con una pipeta limpia.</div>
-<div class="step">Esperar el tiempo indicado por el fabricante.</div>
-<div class="step">Comparar inmediatamente el patrón completo con la escala del envase.</div>
-<div class="step">Repetir la medición y registrar el intervalo de pH.</div>
+<section class="section alt reveal"><div class="container"><h2>4. El secreto de las tiras multiparámetro</h2><p class="lead">Se interpreta el patrón completo de varios sectores reactivos.</p>
+<div class="strip">
+<i data-label="Sector 1" style="background:#f97316"></i><i data-label="Sector 2" style="background:#facc15"></i><i data-label="Sector 3" style="background:#22c55e"></i><i data-label="Sector 4" style="background:#14b8a6"></i><i data-label="Sector 5" style="background:#0ea5e9"></i><i data-label="Sector 6" style="background:#2563eb"></i><i data-label="Sector 7" style="background:#7c3aed"></i><i data-label="Sector 8" style="background:#ec4899"></i>
+</div><div class="note" style="margin-top:18px">Por eso una bebida negra o coloreada puede evaluarse: se compara una combinación de respuestas, no un único color.</div>
+</div></section>
+
+<section class="section reveal"><div class="container"><h2>5. Experimento en vivo</h2><div class="steps">
+<div class="step">Servir 10–15 mL de cada bebida.</div><div class="step">Aplicar una o dos gotas sobre cada sector.</div><div class="step">Esperar el tiempo indicado.</div><div class="step">Comparar con la escala del fabricante.</div><div class="step">Repetir la medición.</div><div class="step">Registrar el intervalo de pH.</div>
 </div></div></section>
 
-<section class="section"><div class="container"><h2>Experiencia complementaria: cómo funcionan los indicadores</h2><p class="lead">Los indicadores individuales no cubren toda la escala de pH. Cada uno posee un intervalo de viraje limitado.</p><div class="indicator-grid">
-<div class="panel"><h3>Heliantina</h3><div class="range methyl"></div><p><strong>Intervalo:</strong> pH 3,1–4,4</p><p>Rojo en medio más ácido, naranja durante el viraje y amarillo por encima del intervalo.</p></div>
-<div class="panel"><h3>Fenolftaleína</h3><div class="range pheno"></div><p><strong>Intervalo:</strong> pH 8,2–10,0</p><p>Incolora en medios ácidos y neutros; rosa en medio básico.</p></div>
-</div><div class="warning" style="margin-top:22px"><strong>Importante:</strong> vino tinto, cola y leche no son adecuados para observar estos virajes directamente porque el color o la turbidez de la muestra los enmascara. Por eso se usan soluciones transparentes preparadas para la demostración.</div></div></section>
-
-<section class="section dark"><div class="container"><h2>Guion del alumno en el stand</h2><div class="grid3">
-<div class="panel"><strong>1. Predecir</strong><p>El visitante ordena las bebidas según la acidez que imagina.</p></div>
-<div class="panel"><strong>2. Medir</strong><p>El alumno aplica las muestras sobre las tiras y compara el patrón.</p></div>
-<div class="panel"><strong>3. Explicar</strong><p>Se muestran heliantina y fenolftaleína en soluciones transparentes y se explican sus rangos.</p></div>
+<section class="section alt reveal"><div class="container"><h2>6. Cargar resultados</h2><div class="grid2">
+<div class="panel"><table class="editable">
+<tr><th>Bebida</th><th>pH medido</th></tr>
+<tr><td>Agua</td><td><input id="aguaInput" type="number" step="0.1" value="7.0" oninput="updateChart()"></td></tr>
+<tr><td>Leche</td><td><input id="lecheInput" type="number" step="0.1" value="6.6" oninput="updateChart()"></td></tr>
+<tr><td>Jugo</td><td><input id="jugoInput" type="number" step="0.1" value="3.8" oninput="updateChart()"></td></tr>
+<tr><td>Vino</td><td><input id="vinoInput" type="number" step="0.1" value="3.3" oninput="updateChart()"></td></tr>
+<tr><td>Cola</td><td><input id="colaInput" type="number" step="0.1" value="2.5" oninput="updateChart()"></td></tr>
+<tr><td>Vinagre</td><td><input id="vinagreInput" type="number" step="0.1" value="2.4" oninput="updateChart()"></td></tr>
+</table></div>
+<div class="panel"><h3>Gráfico dinámico</h3><div class="chart">
+<div class="bar-row"><span>Agua</span><div class="bar-track"><div id="aguaBar" class="bar-fill"></div></div><b id="aguaVal">0</b></div>
+<div class="bar-row"><span>Leche</span><div class="bar-track"><div id="lecheBar" class="bar-fill"></div></div><b id="lecheVal">0</b></div>
+<div class="bar-row"><span>Jugo</span><div class="bar-track"><div id="jugoBar" class="bar-fill"></div></div><b id="jugoVal">0</b></div>
+<div class="bar-row"><span>Vino</span><div class="bar-track"><div id="vinoBar" class="bar-fill"></div></div><b id="vinoVal">0</b></div>
+<div class="bar-row"><span>Cola</span><div class="bar-track"><div id="colaBar" class="bar-fill"></div></div><b id="colaVal">0</b></div>
+<div class="bar-row"><span>Vinagre</span><div class="bar-track"><div id="vinagreBar" class="bar-fill"></div></div><b id="vinagreVal">0</b></div>
+</div><div id="compare" class="note" style="margin-top:16px">Elegí una bebida para comparar tu predicción.</div></div>
 </div></div></section>
 
-<footer>Feria de Ciencias 2026 · Estación 1</footer></body></html>
+<section class="section reveal"><div class="container"><h2>7. ¿Y los indicadores individuales?</h2><div class="indicator-grid">
+<div class="panel"><h3>Heliantina</h3><div class="range methyl"></div><p><strong>pH 3,1–4,4</strong> · rojo → naranja → amarillo.</p></div>
+<div class="panel"><h3>Fenolftaleína</h3><div class="range pheno"></div><p><strong>pH 8,2–10,0</strong> · incolora → rosa.</p></div>
+</div><div class="warning" style="margin-top:18px"><strong>Importante:</strong> vino tinto, cola y leche no son adecuados para observar estos virajes directamente. Se usan soluciones transparentes preparadas.</div></div></section>
+
+<section class="section dark reveal"><div class="container"><h2>🎤 Guion del expositor</h2><div class="guide">
+<div class="panel"><strong>Pregunta inicial</strong><p>“¿Cuál creen que es la bebida más ácida?”</p></div>
+<div class="panel"><strong>Concepto clave</strong><p>El pH es logarítmico y se relaciona con [H⁺].</p></div>
+<div class="panel"><strong>Demostración</strong><p>Medir con la tira y mostrar los rangos de heliantina y fenolftaleína.</p></div>
+<div class="panel"><strong>Cierre</strong><p>“¿Les sorprendió algún resultado? ¿Por qué?”</p></div>
+</div></div></section>
+
+<section class="section alt reveal"><div class="container"><div class="grid2"><div class="panel"><h2>Conexión con la Estación 2</h2><p>La tira se interpreta visualmente. En la siguiente estación, el celular transformará un color en valores RGB.</p></div><div class="panel"><h3>Pregunta puente</h3><p>¿Dos personas compararían exactamente igual el mismo patrón?</p><a class="cta" style="background:var(--blue)" href="estacion2.html">Continuar →</a></div></div></div></section>
+
+<footer>Feria de Ciencias 2026 · Estación 1</footer>
+
+<script>
+let prediction='';
+document.querySelectorAll('.predict button').forEach(b=>b.addEventListener('click',()=>{
+ document.querySelectorAll('.predict button').forEach(x=>x.classList.remove('selected'));
+ b.classList.add('selected');prediction=b.dataset.choice;
+ const r=document.querySelector('.prediction-result');r.classList.add('show');
+ r.innerHTML='<strong>Predicción registrada:</strong> '+prediction+'. La respuesta se comparará con los resultados del stand.';
+ updateChart();
+}));
+function toggleLog(){document.getElementById('logDemo').classList.toggle('show')}
+function phColor(v){if(v<3)return'#dc2626';if(v<5)return'#f97316';if(v<7)return'#facc15';if(v<8)return'#22c55e';if(v<10)return'#06b6d4';if(v<12)return'#2563eb';return'#7c3aed'}
+function updateChart(){
+ const names=['agua','leche','jugo','vino','cola','vinagre'];
+ names.forEach(n=>{
+  const v=parseFloat(document.getElementById(n+'Input').value);
+  const val=isFinite(v)?Math.max(0,Math.min(14,v)):0;
+  document.getElementById(n+'Bar').style.width=(val/14*100)+'%';
+  document.getElementById(n+'Bar').style.background=phColor(val);
+  document.getElementById(n+'Val').textContent=val.toFixed(1);
+ });
+ if(prediction){
+  const vals=names.map(n=>({n,v:parseFloat(document.getElementById(n+'Input').value)})).filter(x=>isFinite(x.v));
+  vals.sort((a,b)=>a.v-b.v);
+  document.getElementById('compare').innerHTML='<strong>Tu predicción:</strong> '+prediction+'<br><strong>Menor pH medido:</strong> '+vals[0].n;
+ }
+}
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;document.querySelector('.progress-top span').style.width=((scrollY/h)*100)+'%'});
+window.addEventListener('DOMContentLoaded',updateChart);
+</script>
+</body>
+</html>
