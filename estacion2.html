@@ -1,61 +1,212 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Estación 2</title>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estación 2 · Fotometría con celular</title>
 <style>
 :root{
   --navy:#061d3a;--ink:#0b1d35;--muted:#607084;--paper:#f6f8fb;
-  --green:#37c95b;--blue:#4c8dff;--orange:#ff991f;--purple:#a45bf6;--pink:#ff4fb3;--teal:#14b8a6;
+  --blue:#4c8dff;--cyan:#43d7ff;--pink:#ff4fb3;--green:#37c95b;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
-a{text-decoration:none;color:inherit}.container{width:min(1160px,92%);margin:auto}
-header{position:sticky;top:0;z-index:30;background:#061d3af4;color:#fff;backdrop-filter:blur(10px)}
-nav{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{font-weight:900}
-.links{display:flex;gap:22px;font-weight:750}.links a{opacity:.82}.links a:hover{opacity:1;color:#ff7bc9}
-.hero{background:linear-gradient(120deg,#061d3a,#0b335c 55%,#35155d);color:#fff;padding:80px 0}
-.hero h1{font-size:clamp(3rem,7vw,5.4rem);line-height:.95;margin:10px 0 18px}.hero p{font-size:1.18rem;color:#dce8f5;max-width:800px}
-.eyebrow{color:#ff67c2;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
-.section{padding:68px 0}.section.alt{background:#fff}.section.dark{background:#061d3a;color:#fff}
-.section h2{font-size:2.15rem;margin:0 0 14px}.lead{color:var(--muted);font-size:1.07rem}.dark .lead{color:#cdd9e6}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.panel{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}.panel h3{margin-top:0}.dark .panel{color:var(--ink)}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 14px 35px #04193220;display:flex;flex-direction:column;gap:10px}.card p{color:var(--muted)}
-.btn{display:inline-block;margin-top:auto;padding:12px 15px;border-radius:10px;color:#fff;font-weight:900;text-align:center}
-.steps{display:grid;gap:14px;counter-reset:s}.step{display:grid;grid-template-columns:40px 1fr;gap:12px}
-.step:before{counter-increment:s;content:counter(s);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eaf3ff;font-weight:900}
-.note{padding:16px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}
-.calc-layout{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start}
-.lab-stage{background:linear-gradient(180deg,#0a223c,#08192b);border-radius:22px;padding:24px;box-shadow:0 16px 40px #04193230;position:sticky;top:94px;min-height:650px;color:#fff}
-.lab-title{text-align:center;margin:0 0 10px}.lab-sub{text-align:center;color:#bfd0df;font-size:.9rem;margin-bottom:20px}
-.burette-wrap{position:relative;height:430px;display:flex;justify-content:center}
-.burette{position:relative;width:78px;height:390px;border:5px solid #b8d7e6;border-radius:20px 20px 10px 10px;background:linear-gradient(90deg,#ffffff22,#ffffff55 45%,#ffffff12);overflow:hidden;box-shadow:inset 0 0 18px #ffffff22}
-.burette-liquid{position:absolute;left:0;right:0;top:0;background:linear-gradient(#d5f6ff,#36afe9);height:100%;transition:.45s}
-.burette-empty{position:absolute;left:0;right:0;top:0;background:linear-gradient(#ffffff08,#ffffff14);height:0%;transition:.45s;z-index:2}
-.burette-scale{position:absolute;inset:10px 7px;z-index:3;background:repeating-linear-gradient(to bottom,transparent 0 7px,#58778a 7px 8px);opacity:.72}
-.burette-number{position:absolute;right:-50px;top:14px;font-size:.75rem;color:#cfe7f4;line-height:28px;z-index:4}
-.stopcock{position:absolute;bottom:-14px;width:120px;height:20px;background:#8ea5b3;border-radius:10px}
-.stopcock:before{content:"";position:absolute;left:54px;top:15px;width:10px;height:66px;background:#b8d7e6;border-radius:6px}
-.stopcock:after{content:"";position:absolute;left:88px;top:-8px;width:12px;height:36px;background:#dceaf0;border-radius:6px;transform:rotate(90deg)}
-.drop{position:absolute;bottom:-92px;width:16px;height:22px;background:#39afe8;border-radius:55% 55% 60% 60%;transform:rotate(45deg);opacity:0}
-.drop.show{opacity:1;animation:drop 1s infinite}@keyframes drop{0%{transform:translateY(0) rotate(45deg)}100%{transform:translateY(28px) rotate(45deg)}}
-.flask{position:absolute;bottom:-185px;width:210px;height:155px;left:50%;transform:translateX(-50%)}
-.flask-neck{position:absolute;left:82px;top:0;width:46px;height:46px;border:5px solid #c6e3ef;border-bottom:0;background:#ffffff10}
-.flask-body{position:absolute;left:25px;top:38px;width:160px;height:110px;border:5px solid #c6e3ef;border-radius:12px 12px 52px 52px;background:linear-gradient(135deg,#ffffff14,#ffffff06);overflow:hidden}
-.flask-liquid{position:absolute;left:0;right:0;bottom:0;height:45%;transition:.5s;background:#f2f6f8}
-.flask-label{position:absolute;top:94px;left:0;right:0;text-align:center;font-weight:900;color:#fff;z-index:5}
-.readout{text-align:center;margin-top:208px}.readout strong{font-size:1.35rem}.progress{height:10px;background:#ffffff20;border-radius:999px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--pink));transition:.45s}
-.slider-wrap{margin-top:16px}.slider-wrap input{width:100%}
-.calculator{background:#fff;border-radius:18px;padding:26px;box-shadow:0 14px 35px #04193220}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field label{display:block;font-weight:800;font-size:.9rem;margin-bottom:6px}.field input{width:100%;padding:12px;border:1px solid #ccd6e2;border-radius:10px;font-size:1rem}
-.calc-btn{width:100%;margin-top:16px;border:0;border-radius:10px;padding:13px;color:#fff;font-weight:900;cursor:pointer}
-.result{margin-top:16px;padding:16px;border-radius:12px;background:#edf8ff;border:1px solid #afd6f3;min-height:74px}
-.formula{font-family:Georgia,serif;background:#f1f5fb;border-left:5px solid var(--purple);padding:15px;border-radius:10px;overflow:auto}
-.development{display:none;margin-top:18px}.development.show{display:block}
-.dev-step{background:#fff;border-left:5px solid var(--purple);border-radius:12px;padding:16px;margin:12px 0;box-shadow:0 8px 18px #04193212}
-.dev-step strong{display:block;margin-bottom:5px}.toggle-dev{margin-top:14px;border:0;border-radius:10px;padding:11px 15px;background:#e9eefe;color:#283b64;font-weight:900;cursor:pointer}
-.endpoint{display:flex;gap:14px;align-items:center;margin-top:18px;padding:14px;border-radius:12px;background:#f7fafc}
-.swatch{width:62px;height:62px;border-radius:50%;box-shadow:0 8px 18px #04193220}.arrow{font-size:2rem}
-footer{background:#031327;color:#c8d4e2;text-align:center;padding:28px}
-@media(max-width:930px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.calc-layout{grid-template-columns:1fr}.lab-stage{position:static}.burette-wrap{height:390px}.readout{margin-top:170px}}
-@media(max-width:560px){.cards,.form-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero h1{font-size:3.2rem}.lab-stage{min-height:610px}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.5}
+header{background:linear-gradient(120deg,#061d3a,#0b335c 60%,#35155d);color:white;padding:54px 0}
+.container{width:min(1100px,92%);margin:auto}
+h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:.95;margin:.2rem 0 1rem}
+.eyebrow{color:#ff71c8;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.lead{color:#dce8f5;font-size:1.08rem;max-width:760px}
+section{padding:46px 0}
+.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+.panel{background:white;border-radius:18px;padding:22px;box-shadow:0 14px 35px #04193220}
+.video-wrap{position:relative;background:#04182b;border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+video,canvas.preview{width:100%;height:100%;object-fit:cover;display:block}
+.roi{position:absolute;width:34%;aspect-ratio:1;left:33%;top:33%;border:4px solid #fff;border-radius:12px;box-shadow:0 0 0 9999px #0006;pointer-events:none}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+button,.file-label{border:0;border-radius:10px;padding:12px 15px;font-weight:850;cursor:pointer}
+.primary{background:var(--blue);color:white}
+.secondary{background:#e9eef8;color:#20314c}
+.success{background:var(--green);color:white}
+input[type=file]{display:none}
+.readings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.reading{border-radius:14px;padding:16px;color:white;text-align:center}
+.reading b{font-size:2rem;display:block}
+.r{background:#ef4444}.g{background:#22c55e}.b{background:#3b82f6}
+.metric{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid #e2e8f0}
+.metric:last-child{border:0}
+.swatch{width:100%;height:70px;border-radius:14px;margin:14px 0;border:1px solid #d7dee7}
+.note{padding:14px;border-radius:12px;background:#fff8dc;border:1px solid #f0d36a}
+.formula{font-family:Georgia,serif;font-size:1.2rem;background:#f1f5fb;border-left:5px solid var(--blue);padding:15px;border-radius:10px}
+.small{font-size:.9rem;color:var(--muted)}
+ol{padding-left:1.2rem}
+footer{background:#031327;color:#c8d4e2;text-align:center;padding:24px}
+@media(max-width:850px){.grid{grid-template-columns:1fr}}
 </style>
-</head><body><header><nav class="container"><a class="brand" href="index.html">⚗ QUÍMICA EN COLORES</a><div class="links"><a href="index.html">Inicio</a><a href="estacion1.html">Estación 1</a><a href="estacion2.html">Estación 2</a><a href="estacion3.html">Estación 3</a><a href="estacion4.html">Estación 4</a></div></nav></header><section class="hero"><div class="container"><div class="eyebrow">Estación 2</div><h1>El color también es un dato</h1><p>Transformamos colores en valores RGB mediante celulares.</p></div></section><section class="section"><div class="container"><div class="panel"><h2>En desarrollo</h2></div></div></section><footer>Feria de Ciencias 2026</footer></body></html>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="eyebrow">Prototipo · Estación 2</div>
+    <h1>El color también se puede medir</h1>
+    <p class="lead">La cámara del celular convierte la luz en números RGB. Con condiciones controladas, esos datos pueden utilizarse como una aproximación fotométrica.</p>
+  </div>
+</header>
+
+<section>
+<div class="container grid">
+  <div class="panel">
+    <h2>1. Capturar la muestra</h2>
+    <div class="video-wrap">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="preview" class="preview" hidden></canvas>
+      <div class="roi" title="Zona central analizada"></div>
+    </div>
+    <div class="controls">
+      <button class="primary" id="openCamera">Abrir cámara</button>
+      <button class="success" id="measure">Medir zona central</button>
+      <label class="file-label secondary">Subir foto<input id="fileInput" type="file" accept="image/*"></label>
+      <button class="secondary" id="reset">Reiniciar</button>
+    </div>
+    <p class="small">La página analiza el cuadrado central. Para comparar muestras, mantené fija la iluminación, la distancia, el recipiente y el fondo.</p>
+  </div>
+
+  <div class="panel">
+    <h2>2. Resultado</h2>
+    <div class="readings">
+      <div class="reading r"><span>Rojo</span><b id="rVal">—</b></div>
+      <div class="reading g"><span>Verde</span><b id="gVal">—</b></div>
+      <div class="reading b"><span>Azul</span><b id="bVal">—</b></div>
+    </div>
+    <div id="swatch" class="swatch"></div>
+    <div class="metric"><strong>Luminosidad relativa</strong><span id="lumVal">—</span></div>
+    <div class="metric"><strong>Intensidad seleccionada</strong><span id="intVal">—</span></div>
+    <div class="metric"><strong>Absorbancia relativa</strong><span id="absVal">—</span></div>
+    <div class="controls">
+      <button class="secondary" id="setBlank">Guardar como blanco I₀</button>
+    </div>
+    <div class="formula">A = −log₁₀(I / I₀)</div>
+    <p class="small">En este prototipo, I es la luminosidad promedio de la zona central. Para una experiencia más rigurosa puede elegirse el canal complementario al color de la solución.</p>
+  </div>
+</div>
+</section>
+
+<section style="background:white">
+<div class="container grid">
+  <div class="panel">
+    <h2>Protocolo de prueba</h2>
+    <ol>
+      <li>Prepará cinco soluciones del mismo color pero con concentración creciente.</li>
+      <li>Usá vasos idénticos y el mismo volumen.</li>
+      <li>Colocá el celular siempre en la misma posición.</li>
+      <li>Usá una fuente LED blanca fija y evitá luz ambiente variable.</li>
+      <li>Medí primero el blanco y guardalo como I₀.</li>
+      <li>Medí cada solución y registrá RGB, luminosidad y absorbancia relativa.</li>
+      <li>Graficá absorbancia relativa versus concentración.</li>
+    </ol>
+  </div>
+  <div class="panel">
+    <h2>Qué debe explicar el alumno</h2>
+    <div class="note">
+      La cámara no “reconoce” químicamente el color. Registra intensidades de rojo, verde y azul. Si controlamos las condiciones, los cambios de intensidad pueden relacionarse con la concentración de una sustancia coloreada.
+    </div>
+    <p><strong>Idea puente:</strong> esto no reemplaza un espectrofotómetro, pero reproduce su lógica general: fuente de luz → muestra → detector → intensidad → absorbancia.</p>
+  </div>
+</div>
+</section>
+
+<canvas id="work" hidden></canvas>
+<footer>Química en Colores · Prototipo de fotometría digital</footer>
+
+<script>
+const video = document.getElementById('video');
+const preview = document.getElementById('preview');
+const work = document.getElementById('work');
+const ctx = work.getContext('2d', { willReadFrequently:true });
+let stream = null;
+let blankIntensity = null;
+let currentSource = 'video';
+
+async function openCamera(){
+  try{
+    stream = await navigator.mediaDevices.getUserMedia({
+      video:{ facingMode:{ ideal:'environment' }, width:{ideal:1280}, height:{ideal:960} },
+      audio:false
+    });
+    video.srcObject = stream;
+    video.hidden = false;
+    preview.hidden = true;
+    currentSource = 'video';
+  }catch(err){
+    alert('No se pudo abrir la cámara. Probá desde GitHub Pages usando HTTPS o usá “Subir foto”.');
+  }
+}
+
+function getSourceSize(){
+  if(currentSource === 'video'){
+    return {w:video.videoWidth, h:video.videoHeight, source:video};
+  }
+  return {w:preview.width, h:preview.height, source:preview};
+}
+
+function analyze(){
+  const {w,h,source} = getSourceSize();
+  if(!w || !h){ alert('Primero abrí la cámara o subí una imagen.'); return; }
+
+  work.width = w; work.height = h;
+  ctx.drawImage(source,0,0,w,h);
+
+  const size = Math.floor(Math.min(w,h)*0.34);
+  const x = Math.floor((w-size)/2);
+  const y = Math.floor((h-size)/2);
+  const data = ctx.getImageData(x,y,size,size).data;
+
+  let r=0,g=0,b=0,n=0;
+  for(let i=0;i<data.length;i+=4){
+    if(data[i+3]===0) continue;
+    r+=data[i]; g+=data[i+1]; b+=data[i+2]; n++;
+  }
+  r=Math.round(r/n); g=Math.round(g/n); b=Math.round(b/n);
+
+  const luminance = 0.2126*r + 0.7152*g + 0.0722*b;
+  const intensity = luminance;
+  let absorbance = null;
+  if(blankIntensity && intensity>0){
+    absorbance = -Math.log10(intensity/blankIntensity);
+  }
+
+  document.getElementById('rVal').textContent=r;
+  document.getElementById('gVal').textContent=g;
+  document.getElementById('bVal').textContent=b;
+  document.getElementById('lumVal').textContent=luminance.toFixed(1);
+  document.getElementById('intVal').textContent=intensity.toFixed(1);
+  document.getElementById('absVal').textContent=absorbance===null?'Definí I₀':absorbance.toFixed(4);
+  document.getElementById('swatch').style.background=`rgb(${r},${g},${b})`;
+  window.lastIntensity = intensity;
+}
+
+document.getElementById('openCamera').addEventListener('click', openCamera);
+document.getElementById('measure').addEventListener('click', analyze);
+document.getElementById('setBlank').addEventListener('click', ()=>{
+  if(!window.lastIntensity){ alert('Primero medí una imagen del blanco.'); return; }
+  blankIntensity = window.lastIntensity;
+  alert('Blanco guardado: I₀ = '+blankIntensity.toFixed(1));
+});
+document.getElementById('reset').addEventListener('click', ()=>{
+  blankIntensity=null; window.lastIntensity=null;
+  ['rVal','gVal','bVal','lumVal','intVal','absVal'].forEach(id=>document.getElementById(id).textContent='—');
+  document.getElementById('swatch').style.background='transparent';
+});
+
+document.getElementById('fileInput').addEventListener('change', e=>{
+  const file=e.target.files[0]; if(!file) return;
+  const img=new Image();
+  img.onload=()=>{
+    preview.width=img.naturalWidth; preview.height=img.naturalHeight;
+    preview.getContext('2d').drawImage(img,0,0);
+    video.hidden=true; preview.hidden=false; currentSource='preview';
+  };
+  img.src=URL.createObjectURL(file);
+});
+</script>
+</body>
+</html>
