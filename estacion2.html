@@ -31,17 +31,22 @@ canvas.chart{width:100%;height:320px;background:white;border-radius:16px}footer{
 <div class="controls"><button class="primary" id="openCamera">Abrir cámara</button><button class="success" id="measure">Medir zona central</button><label class="file-label secondary">Subir foto<input id="fileInput" type="file" accept="image/*"></label><button class="secondary" id="reset">Reiniciar</button></div>
 <p class="small">Analiza el cuadrado central. Usá una caja o soporte, LED blanco fijo, fondo uniforme, mismo recipiente y mismo volumen.</p></div>
 <div class="panel"><h2>2. Resultado</h2><div class="readings"><div class="reading r">Rojo<b id="rVal">—</b></div><div class="reading g">Verde<b id="gVal">—</b></div><div class="reading b">Azul<b id="bVal">—</b></div></div>
-<div id="swatch" class="swatch"></div><div class="metric"><strong>Luminosidad</strong><span id="lumVal">—</span></div><div class="metric"><strong>Intensidad I</strong><span id="intVal">—</span></div><div class="metric"><strong>Absorbancia relativa</strong><span id="absVal">—</span></div>
-<div class="controls"><button class="secondary" id="setBlank">Guardar blanco I₀</button></div><div class="formula">A = −log₁₀(I/I₀)</div></div>
+<div id="swatch" class="swatch"></div><div class="metric"><strong>Luminosidad</strong><span id="lumVal">—</span></div>
+<div class="metric"><strong>R normalizado</strong><span id="rNormVal">—</span></div>
+<div class="metric"><strong>G normalizado</strong><span id="gNormVal">—</span></div>
+<div class="metric"><strong>B normalizado</strong><span id="bNormVal">—</span></div>
+<div class="metric"><strong>Señal analítica del rojo</strong><span id="absVal">—</span></div>
+<div class="controls"><button class="secondary" id="setBlank">Guardar blanco r₀</button></div>
+<div class="formula">r = R/(R+G+B) &nbsp;&nbsp; | &nbsp;&nbsp; Sᵣ = −log₁₀(r/r₀)</div></div>
 </div></section>
 
 <section class="alt"><div class="container grid"><div class="panel"><h2>3. Protocolo</h2><div class="steps">
-<div class="step">Preparar 5 patrones de colorante alimentario con concentración creciente.</div><div class="step">Usar idéntico recipiente y volumen.</div><div class="step">Colocar el celular siempre en la misma posición.</div><div class="step">Usar LED blanco fijo y bloquear luz ambiente.</div><div class="step">Medir primero el blanco y guardarlo como I₀.</div><div class="step">Medir los patrones y registrar absorbancia relativa.</div>
+<div class="step">Preparar 5 patrones de colorante alimentario con concentración creciente.</div><div class="step">Usar idéntico recipiente y volumen.</div><div class="step">Colocar el celular siempre en la misma posición.</div><div class="step">Usar LED blanco fijo y bloquear luz ambiente.</div><div class="step">Medir primero el blanco y guardar el valor normalizado r₀.</div><div class="step">Medir los patrones y registrar la señal analítica Sᵣ.</div>
 </div></div>
 <div class="panel"><h2>Qué se investiga</h2><div class="note">¿Puede una cámara detectar una tendencia cuantitativa entre concentración e intensidad de color?</div><p>El celular no reemplaza al espectrofotómetro. Reproduce su lógica general: fuente de luz → muestra → detector → intensidad → absorbancia.</p></div></div></section>
 
 <section><div class="container"><h2>4. Curva de calibración</h2><p>Copiá las concentraciones conocidas y las absorbancias obtenidas.</p><div class="cal">
-<div class="panel"><table class="cal-table"><tr><th>Patrón</th><th>Concentración</th><th>Absorbancia</th></tr>
+<div class="panel"><table class="cal-table"><tr><th>Patrón</th><th>Concentración</th><th>Señal Sᵣ</th></tr>
 <tr><td>1</td><td><input id="c1" value="0"></td><td><input id="a1" value="0"></td></tr>
 <tr><td>2</td><td><input id="c2" value="20"></td><td><input id="a2" value="0.12"></td></tr>
 <tr><td>3</td><td><input id="c3" value="40"></td><td><input id="a3" value="0.25"></td></tr>
@@ -50,20 +55,43 @@ canvas.chart{width:100%;height:320px;background:white;border-radius:16px}footer{
 <button class="orange" id="fit" style="margin-top:14px">Ajustar recta</button><div id="fitResult" class="result">Esperando ajuste.</div></div>
 <div class="panel"><canvas id="chart" class="chart" width="700" height="420"></canvas></div></div></div></section>
 
-<section class="alt"><div class="container grid"><div class="panel unknown"><h2>5. Muestra desconocida</h2><label><strong>Absorbancia medida</strong></label><input id="unknownA" value="0.31"><button class="primary" id="estimate" style="margin-top:14px">Estimar concentración</button><div id="unknownResult" class="result">Esperando cálculo.</div></div>
-<div class="panel"><h2>6. Qué debe explicar el alumno</h2><p>La concentración no cambia necesariamente la “calidad” del color: cambia su intensidad. Por eso buscamos una señal numérica que responda de manera sistemática.</p><div class="formula">A = m·C + b</div></div></div></section>
+<section class="alt"><div class="container grid"><div class="panel unknown"><h2>5. Muestra desconocida</h2><label><strong>Señal analítica Sᵣ medida</strong></label><input id="unknownA" value="0.31"><button class="primary" id="estimate" style="margin-top:14px">Estimar concentración</button><div id="unknownResult" class="result">Esperando cálculo.</div></div>
+<div class="panel"><h2>6. Qué debe explicar el alumno</h2><p>La concentración no cambia necesariamente la “calidad” del color: cambia la intensidad relativa de los canales. Por eso usamos el cociente R/(R+G+B), que reduce parcialmente el efecto de variaciones globales de iluminación.</p><div class="formula">Sᵣ = m·C + b</div></div></div></section>
 
 <section class="dark"><div class="container"><h2>🎤 Guion del expositor</h2><div class="guide"><div class="panel"><strong>Pregunta</strong><p>“¿Puede un celular medir un color?”</p></div><div class="panel"><strong>Concepto</strong><p>RGB son intensidades de rojo, verde y azul.</p></div><div class="panel"><strong>Demostración</strong><p>Blanco, patrones y desconocida.</p></div><div class="panel"><strong>Cierre</strong><p>“¿Qué variables debimos controlar?”</p></div></div></div></section>
 <footer>Química en Colores · Estación 2</footer>
 <canvas id="work" hidden></canvas>
 <script>
 const video=document.getElementById('video'),preview=document.getElementById('preview'),work=document.getElementById('work'),ctx=work.getContext('2d',{willReadFrequently:true});
-let stream=null,blankIntensity=null,currentSource='video',lastIntensity=null,fitSlope=null,fitIntercept=null;
+let stream=null,blankRnorm=null,currentSource='video',lastRnorm=null,fitSlope=null,fitIntercept=null;
 async function openCamera(){try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});video.srcObject=stream;video.hidden=false;preview.hidden=true;currentSource='video'}catch(e){alert('No se pudo abrir la cámara. Usá HTTPS o “Subir foto”.')}}
-function analyze(){const source=currentSource==='video'?video:preview,w=currentSource==='video'?video.videoWidth:preview.width,h=currentSource==='video'?video.videoHeight:preview.height;if(!w||!h){alert('Abrí la cámara o subí una foto.');return}work.width=w;work.height=h;ctx.drawImage(source,0,0,w,h);const size=Math.floor(Math.min(w,h)*.34),x=Math.floor((w-size)/2),y=Math.floor((h-size)/2),d=ctx.getImageData(x,y,size,size).data;let r=0,g=0,b=0,n=0;for(let i=0;i<d.length;i+=4){r+=d[i];g+=d[i+1];b+=d[i+2];n++}r=Math.round(r/n);g=Math.round(g/n);b=Math.round(b/n);const L=.2126*r+.7152*g+.0722*b;lastIntensity=L;const A=blankIntensity&&L>0?-Math.log10(L/blankIntensity):null;rVal.textContent=r;gVal.textContent=g;bVal.textContent=b;lumVal.textContent=L.toFixed(1);intVal.textContent=L.toFixed(1);absVal.textContent=A===null?'Definí I₀':A.toFixed(4);swatch.style.background=`rgb(${r},${g},${b})`}
+function analyze(){
+ const source=currentSource==='video'?video:preview;
+ const w=currentSource==='video'?video.videoWidth:preview.width;
+ const h=currentSource==='video'?video.videoHeight:preview.height;
+ if(!w||!h){alert('Abrí la cámara o subí una foto.');return}
+ work.width=w;work.height=h;ctx.drawImage(source,0,0,w,h);
+ const size=Math.floor(Math.min(w,h)*.34),x=Math.floor((w-size)/2),y=Math.floor((h-size)/2);
+ const d=ctx.getImageData(x,y,size,size).data;
+ let r=0,g=0,b=0,n=0;
+ for(let i=0;i<d.length;i+=4){r+=d[i];g+=d[i+1];b+=d[i+2];n++}
+ r=Math.round(r/n);g=Math.round(g/n);b=Math.round(b/n);
+ const sum=r+g+b;
+ const rn=sum>0?r/sum:0, gn=sum>0?g/sum:0, bn=sum>0?b/sum:0;
+ const L=.2126*r+.7152*g+.0722*b;
+ lastRnorm=rn;
+ const Sr=(blankRnorm&&rn>0)?-Math.log10(rn/blankRnorm):null;
+ rVal.textContent=r;gVal.textContent=g;bVal.textContent=b;
+ lumVal.textContent=L.toFixed(1);
+ rNormVal.textContent=rn.toFixed(4);
+ gNormVal.textContent=gn.toFixed(4);
+ bNormVal.textContent=bn.toFixed(4);
+ absVal.textContent=Sr===null?'Definí r₀':Sr.toFixed(4);
+ swatch.style.background=`rgb(${r},${g},${b})`;
+}
 function reg(xs,ys){const n=xs.length,sx=xs.reduce((a,b)=>a+b,0),sy=ys.reduce((a,b)=>a+b,0),sxy=xs.reduce((s,x,i)=>s+x*ys[i],0),sx2=xs.reduce((s,x)=>s+x*x,0),m=(n*sxy-sx*sy)/(n*sx2-sx*sx),b=(sy-m*sx)/n,mean=sy/n,tot=ys.reduce((s,y)=>s+(y-mean)**2,0),res=ys.reduce((s,y,i)=>s+(y-(m*xs[i]+b))**2,0);return{m,b,r2:tot===0?1:1-res/tot}}
 function draw(xs,ys,m,b){const c=chart,g=c.getContext('2d'),W=c.width,H=c.height,p=55;g.clearRect(0,0,W,H);g.fillStyle='#fff';g.fillRect(0,0,W,H);const xmin=Math.min(...xs),xmax=Math.max(...xs),ymax=Math.max(...ys)*1.15||1,X=x=>p+(x-xmin)/(xmax-xmin||1)*(W-2*p),Y=y=>H-p-y/ymax*(H-2*p);g.strokeStyle='#94a3b8';g.beginPath();g.moveTo(p,p);g.lineTo(p,H-p);g.lineTo(W-p,H-p);g.stroke();g.strokeStyle='#4c8dff';g.lineWidth=3;g.beginPath();g.moveTo(X(xmin),Y(m*xmin+b));g.lineTo(X(xmax),Y(m*xmax+b));g.stroke();xs.forEach((x,i)=>{g.fillStyle='#ff4fb3';g.beginPath();g.arc(X(x),Y(ys[i]),7,0,Math.PI*2);g.fill()})}
 function fit(){const xs=[],ys=[];for(let i=1;i<=5;i++){const x=parseFloat(document.getElementById('c'+i).value),y=parseFloat(document.getElementById('a'+i).value);if(isFinite(x)&&isFinite(y)){xs.push(x);ys.push(y)}}const r=reg(xs,ys);fitSlope=r.m;fitIntercept=r.b;fitResult.innerHTML=`<strong>A = ${r.m.toFixed(5)}·C + ${r.b.toFixed(5)}</strong><br>R² = ${r.r2.toFixed(4)}`;draw(xs,ys,r.m,r.b)}
-openCamera.addEventListener('click',openCamera);measure.addEventListener('click',analyze);setBlank.addEventListener('click',()=>{if(!lastIntensity){alert('Medí primero el blanco.');return}blankIntensity=lastIntensity;alert('Blanco guardado: I₀ = '+blankIntensity.toFixed(1))});reset.addEventListener('click',()=>location.reload());fileInput.addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const img=new Image();img.onload=()=>{preview.width=img.naturalWidth;preview.height=img.naturalHeight;preview.getContext('2d').drawImage(img,0,0);video.hidden=true;preview.hidden=false;currentSource='preview'};img.src=URL.createObjectURL(file)});fit.addEventListener('click',fit);estimate.addEventListener('click',()=>{if(fitSlope===null){unknownResult.textContent='Primero ajustá la recta.';return}const A=parseFloat(unknownA.value),C=(A-fitIntercept)/fitSlope;unknownResult.innerHTML=`<strong>Concentración estimada:</strong> ${C.toFixed(2)} unidades`});window.addEventListener('DOMContentLoaded',fit);
+openCamera.addEventListener('click',openCamera);measure.addEventListener('click',analyze);setBlank.addEventListener('click',()=>{if(lastRnorm===null){alert('Medí primero el blanco.');return}blankRnorm=lastRnorm;alert('Blanco guardado: r₀ = '+blankRnorm.toFixed(4))});reset.addEventListener('click',()=>location.reload());fileInput.addEventListener('change',e=>{const file=e.target.files[0];if(!file)return;const img=new Image();img.onload=()=>{preview.width=img.naturalWidth;preview.height=img.naturalHeight;preview.getContext('2d').drawImage(img,0,0);video.hidden=true;preview.hidden=false;currentSource='preview'};img.src=URL.createObjectURL(file)});fit.addEventListener('click',fit);estimate.addEventListener('click',()=>{if(fitSlope===null){unknownResult.textContent='Primero ajustá la recta.';return}const A=parseFloat(unknownA.value),C=(A-fitIntercept)/fitSlope;unknownResult.innerHTML=`<strong>Concentración estimada:</strong> ${C.toFixed(2)} unidades`});window.addEventListener('DOMContentLoaded',fit);
 </script>
 </body></html>
