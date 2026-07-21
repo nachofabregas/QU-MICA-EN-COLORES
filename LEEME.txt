@@ -1,0 +1,8 @@
+QUÍMICA EN COLORES — V10
+
+Única modificación respecto de los archivos de trabajo actuales:
+- Logo del Complejo Educativo Alberdi incorporado en la página de inicio.
+- Logo pequeño incorporado en las cuatro estaciones.
+- No se modificaron textos, procedimientos, calculadoras ni simuladores.
+
+Para publicar: subí los 6 archivos del ZIP a la raíz del repositorio y reemplazá los existentes.

@@ -57,9 +57,16 @@ nav{height:72px;display:flex;align-items:center;justify-content:space-between}.b
 footer{background:#031327;color:#c8d4e2;text-align:center;padding:28px}
 @media(max-width:930px){.links{display:none}.cards{grid-template-columns:repeat(2,1fr)}.grid2,.grid3,.calc-layout{grid-template-columns:1fr}.lab-stage{position:static}.burette-wrap{height:390px}.readout{margin-top:170px}}
 @media(max-width:560px){.cards,.form-grid{grid-template-columns:1fr}.hero{padding:58px 0}.hero h1{font-size:3.2rem}.lab-stage{min-height:610px}}
+
+/* Identidad institucional CEA — única modificación V10 */
+.brand{display:flex;align-items:center;gap:10px}
+.brand .cea-nav-logo{width:42px;height:42px;object-fit:contain;background:#fff;border-radius:8px;padding:3px;flex:0 0 auto}
+.cea-home-logo{width:104px;height:112px;object-fit:contain;background:#fff;border-radius:16px;padding:8px;box-shadow:0 12px 30px #00000035;margin-bottom:18px}
+.cea-page-logo{position:absolute;top:18px;left:22px;width:52px;height:56px;object-fit:contain;background:#fff;border-radius:10px;padding:4px;box-shadow:0 8px 22px #00000030;z-index:3}
+@media(max-width:700px){.brand .cea-nav-logo{width:36px;height:36px}.cea-home-logo{width:84px;height:91px}.cea-page-logo{width:42px;height:46px;top:12px;left:12px}}
 </style>
-</head><body><header><nav class="container"><a class="brand" href="index.html">⚗ QUÍMICA EN COLORES</a><div class="links"><a href="index.html">Inicio</a><a href="estacion1.html">Estación 1</a><a href="estacion2.html">Estación 2</a><a href="estacion3.html">Estación 3</a><a href="estacion4.html">Estación 4</a></div></nav></header>
-<section class="hero"><div class="container"><div class="eyebrow">Feria de Ciencias 2026</div><h1>QUÍMICA<br>EN COLORES</h1><p>Cuando la química y la tecnología permiten ver lo invisible.</p></div></section>
+</head><body><header><nav class="container"><a class="brand" href="index.html"><img class="cea-nav-logo" src="logo-cea.jpg" alt="Logo del Complejo Educativo Alberdi">QUÍMICA EN COLORES</a><div class="links"><a href="index.html">Inicio</a><a href="estacion1.html">Estación 1</a><a href="estacion2.html">Estación 2</a><a href="estacion3.html">Estación 3</a><a href="estacion4.html">Estación 4</a></div></nav></header>
+<section class="hero"><div class="container"><img class="cea-home-logo" src="logo-cea.jpg" alt="Logo del Complejo Educativo Alberdi"><div class="eyebrow">Feria de Ciencias 2026</div><h1>QUÍMICA<br>EN COLORES</h1><p>Cuando la química y la tecnología permiten ver lo invisible.</p></div></section>
 <section class="section"><div class="container"><h2>Las cuatro estaciones</h2><div class="cards">
 <div class="card"><h3>⚗️ ¿Qué tan ácidas son las bebidas?</h3><p>Tiras multiparámetro e indicadores.</p><a class="btn" style="background:var(--green)" href="estacion1.html">Explorar →</a></div>
 <div class="card"><h3>📱 El color también es un dato</h3><p>Análisis RGB con celulares.</p><a class="btn" style="background:var(--blue)" href="estacion2.html">Explorar →</a></div>
